@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @question.question %>
+</p>
+
+<p>
+  <strong>Option 1:</strong>
+  <%= @question.option_1 %>
+</p>
+
+<p>
+  <strong>Option 2:</strong>
+  <%= @question.option_2 %>
+</p>
+
+<p>
+  <strong>Personality type:</strong>
+  <%= @question.personality_type %>
+</p>
+
+<p>
+  <strong>Option 1 value:</strong>
+  <%= @question.option_1_value %>
+</p>
+
+<p>
+  <strong>Option 2 value:</strong>
+  <%= @question.option_2_value %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

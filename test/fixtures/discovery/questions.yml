@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question: MyString
+  option_1: MyString
+  option_2: MyString
+  personality_type: MyString
+  option_1_value: MyString
+  option_2_value: MyString
+
+two:
+  question: MyString
+  option_1: MyString
+  option_2: MyString
+  personality_type: MyString
+  option_1_value: MyString
+  option_2_value: MyString
