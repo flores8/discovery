@@ -1,0 +1,1 @@
+Discovery::Engine.load_seed
