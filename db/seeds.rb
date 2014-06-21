@@ -85,7 +85,7 @@ Discovery::Question.create(:question => 'When in charge of others do you tend to
 #10
 Discovery::Question.create(:question => 'Are you more often', :option_1 => 'a cool-headed person', :option_2 => 'a warm-hearted person', :personality_type => "Thinking/Feeling")
 #11
-Discovery::Question.create(:question => 'Which is more of a compliment:', :option_1 => '\"There\'s a logical person\"', :option_2 => '\"There\'s a sentimental person\"', :personality_type => "Thinking/Feeling")
+Discovery::Question.create(:question => 'Which is more of a compliment:', :option_1 => '"There\'s a logical person"', :option_2 => '"There\'s a sentimental person"', :personality_type => "Thinking/Feeling")
 #12
 Discovery::Question.create(:question => 'Which rules you more', :option_1 => 'your thoughts', :option_2 => 'your feelings', :personality_type => "Thinking/Feeling")
 #13
