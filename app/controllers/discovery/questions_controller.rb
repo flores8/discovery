@@ -35,7 +35,7 @@ module Discovery
 
     # PATCH/PUT /questions/1
     def update
-      if @question.update(params[:question])
+      if @question.update_attributes(params[:question])
         redirect_to @question, notice: 'Question was successfully updated.'
       else
         render action: 'edit'
