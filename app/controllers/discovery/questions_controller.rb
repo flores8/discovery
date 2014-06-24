@@ -6,7 +6,7 @@ module Discovery
 
     # GET /questions
     def index
-      @questions = Question.all
+      @questions = Discovery::Question.all
     end
 
     # GET /questions/1
