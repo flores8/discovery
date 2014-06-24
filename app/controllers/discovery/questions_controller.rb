@@ -15,7 +15,7 @@ module Discovery
 
     # GET /questions/new
     def new
-      @question = Question.new
+      @question = Discovery::Question.new
     end
 
     # GET /questions/1/edit
@@ -24,7 +24,7 @@ module Discovery
 
     # POST /questions
     def create
-      @question = Question.new(params[:question])
+      @question = Discovery::Question.new(params[:question])
 
       if @question.save
         redirect_to @question, notice: 'Question was successfully created.'
@@ -51,7 +51,7 @@ module Discovery
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_question
-        @question = Question.find(params[:id])
+        @question = Discovery::Question.find(params[:id])
       end
   end
 end
