@@ -1,34 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%= form_for @answer do |f| %>
+  <p><%= @question.question %></p>
+  <div class="firstquestion">
 
-<p>
-  <strong>Question:</strong>
-  <%= @question.question %>
-</p>
+    <%= label_tag do %>
+      <%= f.radio_button :value, "#{@question.option_1_value}" %>
+      <%# binding.pry %>
+      <%= f.hidden_field :question, value: "#{@answer.question}" %>
+      
+      <%= @question.option_1 %>
+    <% end %>
+      
+  </div>
+  <div class="secondquestion">
+    <%= label_tag do %>
+      <%= f.radio_button :value, "#{@question.option_2_value}" %>
+      <%= f.hidden_field :question, value: "#{@answer.question}" %>
+      <%# f.hidden_field :value, :value => @question.option_2_value %>
+      <%= @question.option_2 %>
+    <% end %>
+  </div>
 
-<p>
-  <strong>Option 1:</strong>
-  <%= @question.option_1 %>
-</p>
+  <%= f.submit %>
 
-<p>
-  <strong>Option 2:</strong>
-  <%= @question.option_2 %>
-</p>
-
-<p>
-  <strong>Personality type:</strong>
-  <%= @question.personality_type %>
-</p>
-
-<p>
-  <strong>Option 1 value:</strong>
-  <%= @question.option_1_value %>
-</p>
-
-<p>
-  <strong>Option 2 value:</strong>
-  <%= @question.option_2_value %>
-</p>
+<% end %>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

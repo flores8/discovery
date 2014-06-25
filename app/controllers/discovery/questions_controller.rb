@@ -11,6 +11,8 @@ module Discovery
 
     # GET /questions/1
     def show
+      @answer = Discovery::Answer.new
+      @answer.question = @question.id
     end
 
     # GET /questions/new
