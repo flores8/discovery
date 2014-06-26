@@ -2,6 +2,6 @@ Discovery::Engine.routes.draw do
   get "quiz/new"
   resources :questions
   resources :answers
-  resources :quiz
+  get 'quiz' => "quiz#show"
   root to: "questions#index"
 end
