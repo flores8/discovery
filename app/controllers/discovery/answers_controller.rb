@@ -27,15 +27,19 @@ module Discovery
     def create
     	# do some stuff
 			# and then redirect_to Question#Show for next question
-			#binding.pry
       @answer = Discovery::Answer.new(params[:answer])
       @next_question = @answer.question + 10
+      #binding.pry
       if @next_question > 70
       	@next_question = @next_question - 69
       end
       
       if @answer.save
-        redirect_to controller: 'questions', action: 'show', id: @next_question
+      	if @next_question == 2
+      		redirect_to quiz_path
+      	else
+	        redirect_to controller: 'questions', action: 'show', id: @next_question
+	      end
       else
         render action: 'new'
       end

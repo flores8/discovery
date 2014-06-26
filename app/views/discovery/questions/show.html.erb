@@ -1,21 +1,19 @@
 <%= form_for @answer do |f| %>
   <p><%= @question.question %></p>
-  <div class="firstquestion">
 
+  <div class="firstquestion">
     <%= label_tag do %>
       <%= f.radio_button :value, "#{@question.option_1_value}" %>
       <%# binding.pry %>
       <%= f.hidden_field :question, value: "#{@answer.question}" %>
-      
       <%= @question.option_1 %>
     <% end %>
-      
   </div>
+  
   <div class="secondquestion">
     <%= label_tag do %>
       <%= f.radio_button :value, "#{@question.option_2_value}" %>
       <%= f.hidden_field :question, value: "#{@answer.question}" %>
-      <%# f.hidden_field :value, :value => @question.option_2_value %>
       <%= @question.option_2 %>
     <% end %>
   </div>

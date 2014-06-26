@@ -1,0 +1,97 @@
+<h1>Congratulations, you completed your quiz!</h1>
+
+<p>Your extravert score: <%= @extravert %></p>
+<p>Your introvert score: <%= @introvert %></p>
+<p>Your sensory score: <%= @sensory %></p>
+<p>Your intuitive score: <%= @intuitive %></p>
+<p>Your thinking score: <%= @thinking %></p>
+<p>Your feeling score: <%= @feeling %></p>
+<p>Your judging score: <%= @judging %></p>
+<p>Your perceiving score: <%= @perceiving %></p>
+
+<h2>Scoring:</h2>
+
+<!-- Extravert / Introvert --> 
+<p>You are 
+	<% if @introvert > @extravert %>
+	more introverted (I).
+	<% elsif @extravert > @introvert%>
+	more extraverted (E).
+	<% elsif @extravert == @introvert %>
+	on the border between being extraverted and introverted.
+	<% end %>
+</p>
+
+<!-- Sensory / Intuitive --> 
+<p>You are 
+	<% if @sensory > @intuitive %>
+	more sensory (S).
+	<% elsif @intuitive > @sensory%>
+	more intuitive (N).
+	<% elsif @intuitive == @sensory %>
+	on the border between being intuitive and sensory.
+	<% end %>
+</p>
+
+<!-- Thinking / Feeling --> 
+<p>You are 
+	<% if @thinking > @feeling %>
+	more thinking (T).
+	<% elsif @feeling > @thinking%>
+	more feeling (F).
+	<% elsif @feeling == @thinking %>
+	on the border between being feeling and thinking.
+	<% end %>
+</p>
+
+<!-- Judging / Perceiving --> 
+<p>You are 
+	<% if @judging > @perceiving %>
+	more judging (J).
+	<% elsif @perceiving > @judging%>
+	more perceiving (P).
+	<% elsif @perceiving == @judging %>
+	on the border between being perceiving and judging.
+	<% end %>
+</p>
+
+<!-- Personality Type, all in one line 
+########################################### --> 
+
+<!-- Extravert / Introvert --> 
+<h3>Your personality type is:  
+	<% if @introvert > @extravert %>
+	I
+	<% elsif @extravert > @introvert%>
+	E 
+	<% elsif @extravert == @introvert %>
+	[E/I split]
+	<% end %>
+
+<!-- Sensory / Intuitive --> 
+	<% if @sensory > @intuitive %>
+	S
+	<% elsif @intuitive > @sensory%>
+	N
+	<% elsif @intuitive == @sensory %>
+	[S/N split]
+	<% end %>
+
+<!-- Thinking / Feeling --> 
+	<% if @thinking > @feeling %>
+	T
+	<% elsif @feeling > @thinking%>
+	F
+	<% elsif @feeling == @thinking %>
+	[T/F split]
+	<% end %>
+
+<!-- Judging / Perceiving --> 
+	<% if @judging > @perceiving %>
+	J
+	<% elsif @perceiving > @judging%>
+	P
+	<% elsif @perceiving == @judging %>
+	[J/P split]
+	<% end %>
+</h3>
