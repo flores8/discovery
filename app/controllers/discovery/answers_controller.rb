@@ -29,7 +29,7 @@ module Discovery
 			# and then redirect_to Question#Show for next question
       @answer = Discovery::Answer.new(params[:answer])
       @next_question = @answer.question + 10
-      #binding.pry
+      binding.pry
       if @next_question > 70
       	@next_question = @next_question - 69
       end
