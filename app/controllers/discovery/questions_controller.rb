@@ -11,13 +11,25 @@ module Discovery
 
     # GET /questions/1
     def show
+      #binding.pry
+      # this might belong in the view...
+      # if current_user.answers.where(question: @question.id)
+      #   puts "already answered!"
+      #   @answer = current_user.answers.where(question: @question.id)
+      # else
+      #   @answer = Discovery::Answer.new
+      #   @answer.question = @question.id
+      # end
+      @progress = current_user.answers.count
+      @progress_relative = (@progress.to_f)/(Discovery::Question.all.count)
+      @total = @progress_relative * 100
       @answer = Discovery::Answer.new
       @answer.question = @question.id
     end
 
     # GET /questions/new
     def new
-      @question = Discovery::Question.new
+      @question = Discovery::Question.new 
     end
 
     # GET /questions/1/edit
@@ -55,5 +67,10 @@ module Discovery
       def set_question
         @question = Discovery::Question.find(params[:id])
       end
+
+      # def percentage_complete
+      #   @progress = current_user.answers.count
+      #   @total = @progress/(Discovery::Question.all.count)
+      # end
   end
 end

@@ -22,5 +22,7 @@
 
 <% end %>
 
+<p><%= number_to_percentage(@total, precision: 0) %> complete.</p>
+
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
