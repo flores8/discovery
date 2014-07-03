@@ -3,6 +3,7 @@ require_dependency "discovery/application_controller"
 module Discovery
   class AnswersController < ApplicationController
   	before_filter :set_answer, only: [:show, :edit, :update, :destroy]
+    before_filter :create_answer, only: [:create]
     before_filter :next_question, only: [:create, :edit, :update]
 
     # GET /answers
@@ -24,9 +25,8 @@ module Discovery
     end
 
     def create
-      @answer = Discovery::Answer.new(params[:answer])
-      @answer.user = current_user
-      #binding.pry  
+      #binding.pry
+      @answer.user = current_user 
       if @answer.save
       	if @next == 70
       		redirect_to quiz_path
@@ -62,6 +62,10 @@ module Discovery
       # Use callbacks to share common setup or constraints between actions.
       def set_answer
         @answer = Discovery::Answer.find(params[:id])
+      end
+
+      def create_answer
+        @answer = Discovery::Answer.new(params[:answer])
       end
 
       def next_question

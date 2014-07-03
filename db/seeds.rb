@@ -4,7 +4,7 @@ Discovery::Question.create(:question => 'When the phone rings do you', :option_1
 #2
 Discovery::Question.create(:question => 'Waiting in line, do you often', :option_1 => 'chat with others', :option_2 => 'stick to business', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #3
-Discovery::Question.create(:question => 'At a party, do you', :option_1 => 'interact with many, even strangers', :option_2 => 'interact iwth a few friends', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+Discovery::Question.create(:question => 'At a party, do you', :option_1 => 'interact with many, even strangers', :option_2 => 'interact with a few friends', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #4
 Discovery::Question.create(:question => 'Does interacting with strangers', :option_1 => 'energize you', :option_2 => 'tax your reserves', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #5
