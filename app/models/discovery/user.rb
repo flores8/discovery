@@ -1,5 +1,5 @@
 class Discovery::User < User
-	def foo
-		puts "Bar"
+	def progress
+		(answers.count.to_f)/(Discovery::Question.all.count) * 100
 	end
 end

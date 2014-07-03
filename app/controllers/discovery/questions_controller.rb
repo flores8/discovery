@@ -3,28 +3,24 @@ require_dependency "discovery/application_controller"
 module Discovery
   class QuestionsController < ApplicationController
     before_filter :set_question, only: [:show, :edit, :update, :destroy]
+    before_filter :authenticate_user!, only: [:show]
 
     # GET /questions
     def index
       @questions = Discovery::Question.all
     end
 
-    # GET /questions/1
     def show
-      #binding.pry
-      # this might belong in the view...
-      # if current_user.answers.where(question: @question.id)
-      #   puts "already answered!"
-      #   @answer = current_user.answers.where(question: @question.id)
-      # else
-      #   @answer = Discovery::Answer.new
-      #   @answer.question = @question.id
-      # end
-      @progress = current_user.answers.count
-      @progress_relative = (@progress.to_f)/(Discovery::Question.all.count)
-      @total = @progress_relative * 100
-      @answer = Discovery::Answer.new
-      @answer.question = @question.id
+
+      if answer_update = current_user.answers.find_by_question(Discovery::Question.find(params[:id]))
+        @answer = answer_update
+      else
+        @answer = Discovery::Answer.new
+        @answer.question = @question.id
+        @answer.user_id = current_user.id
+      end
+      
+      
     end
 
     # GET /questions/new
