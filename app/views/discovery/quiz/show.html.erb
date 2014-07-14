@@ -1,4 +1,10 @@
-<h1>Congratulations, you completed your quiz!</h1>
+<% if current_discovery_user.progress < 100 %>
+	<h1>You are <%= number_to_percentage(current_discovery_user.progress, precision: 0) %> complete! </h1>
+	<%= link_to "Keep going!", questions_path %>
+<% else %>
+	<h1>Congratulations, you completed your quiz!</h1>
+<% end %>
+<%= current_discovery_user.progress %>
 
 <p>Your extravert score: <%= @extravert %></p>
 <p>Your introvert score: <%= @introvert %></p>

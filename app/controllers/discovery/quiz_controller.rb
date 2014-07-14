@@ -15,8 +15,6 @@ module Discovery
     	@feeling = Discovery::Answer.where(user_id: current_user.id).where(value: "Feeling").count
     	@judging = Discovery::Answer.where(user_id: current_user.id).where(value: "Judging").count
     	@perceiving = Discovery::Answer.where(user_id: current_user.id).where(value: "Perceiving").count
-
-    	#displays personality and percentage complete
     end
   end
 end
