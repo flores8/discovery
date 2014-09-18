@@ -3,7 +3,7 @@ require_dependency "discovery/application_controller"
 module Discovery
   class QuestionsController < ApplicationController
     before_filter :set_question, only: [:show, :edit, :update, :destroy]
-    before_filter :authenticate_user!, only: [:show]
+    before_filter :authenticate_user!
 
     # GET /questions
     def index

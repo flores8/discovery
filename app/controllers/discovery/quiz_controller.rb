@@ -2,6 +2,7 @@ require_dependency "discovery/application_controller"
 
 module Discovery
   class QuizController < ApplicationController
+    before_filter :authenticate_user!
     def new
     	# you might not need much logic here
     end

@@ -5,6 +5,7 @@ module Discovery
   	before_filter :set_answer, only: [:show, :edit, :update, :destroy]
     before_filter :create_answer, only: [:create]
     before_filter :next_question, only: [:create, :edit, :update]
+    before_filter :authenticate_user!
 
     # GET /answers
     def index
