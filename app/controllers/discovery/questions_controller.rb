@@ -3,7 +3,10 @@ require_dependency "discovery/application_controller"
 module Discovery
   class QuestionsController < ApplicationController
     before_filter :set_question, only: [:show, :edit, :update, :destroy]
+    before_filter :current_question, :next_question, only: [:index, :show]
+    before_filter :previous_question, only: [:show]
     before_filter :authenticate_user!
+    # binding.pry
 
     # GET /questions
     def index
@@ -59,6 +62,30 @@ module Discovery
     end
 
     private
+      # If you've answered some questions let's find out what question you're on.
+      def current_question 
+        @n = 1
+        while current_user.answers.where(id: @n).present?
+          @n += 1
+        end
+        @last_answered = current_user.answers.last
+        @last_question = Discovery::Question.find(@last_answered.question)
+      end
+
+      def next_question
+        @next_question = @last_question.id + 10
+        if @next_question > 70
+          @next_question = @next_question - 69
+        end
+      end
+
+      def previous_question
+        @previous_question = @question.id - 10
+        if @previous_question < 0
+          @previous_question = @previous_question + 69
+        end
+      end
+
       # Use callbacks to share common setup or constraints between actions.
       def set_question
         @question = Discovery::Question.find(params[:id])

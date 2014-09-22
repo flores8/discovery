@@ -56,7 +56,7 @@ module Discovery
     # DELETE /answers/1
     def destroy
       @answer.destroy
-      redirect_to answers_url, notice: 'Answer was successfully destroyed.'
+      redirect_to :back, notice: 'Answer was successfully removed.'
     end
 
     private

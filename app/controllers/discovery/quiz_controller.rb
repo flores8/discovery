@@ -2,9 +2,9 @@ require_dependency "discovery/application_controller"
 
 module Discovery
   class QuizController < ApplicationController
+    before_filter :current_question, :next_question, only: [:show]
     before_filter :authenticate_user!
     def new
-    	# you might not need much logic here
     end
 
     def show 
@@ -17,5 +17,23 @@ module Discovery
     	@judging = Discovery::Answer.where(user_id: current_user.id).where(value: "Judging").count
     	@perceiving = Discovery::Answer.where(user_id: current_user.id).where(value: "Perceiving").count
     end
+
+    private
+      # If you've answered some questions let's find out what question you're on.
+      def current_question 
+        @n = 1
+        while current_user.answers.where(id: @n).present?
+          @n += 1
+        end
+        @last_answered = current_user.answers.last
+        @last_question = Discovery::Question.find(@last_answered.question)
+      end
+
+      def next_question
+        @next_question = @last_question.id + 10
+        if @next_question > 70
+          @next_question = @next_question - 69
+        end
+      end
   end
 end
