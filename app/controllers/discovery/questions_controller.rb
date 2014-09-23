@@ -3,9 +3,9 @@ require_dependency "discovery/application_controller"
 module Discovery
   class QuestionsController < ApplicationController
     before_filter :set_question, only: [:show, :edit, :update, :destroy]
-    before_filter :current_question, :next_question, only: [:index, :show]
-    before_filter :previous_question, only: [:show]
-    before_filter :authenticate_user!
+    before_filter :current_question, :go_to_next_question, only: [:index]
+    before_filter :next_question, :previous_question, only: [:show]
+    before_filter :authenticate_user!, only: [:show, :edit, :update, :destroy]
     # binding.pry
 
     # GET /questions
@@ -64,21 +64,34 @@ module Discovery
     private
       # If you've answered some questions let's find out what question you're on.
       def current_question 
-        @n = 1
-        while current_user.answers.where(id: @n).present?
-          @n += 1
+        if current_user
+          @n = 1
+          while current_user.answers.where(id: @n).present?
+            @n += 1
+          end
+          @last_answered = current_user.answers.last
+          @last_question = Discovery::Question.find(@last_answered.question)
         end
-        @last_answered = current_user.answers.last
-        @last_question = Discovery::Question.find(@last_answered.question)
+      end
+      # Once we've found out what question you're on let's send you to the next question
+      def go_to_next_question
+        if current_user
+          @go_to_next_question = @last_question.id + 10
+          if @go_to_next_question > 70
+            @go_to_next_question = @go_to_next_question - 69
+          end
+        end
       end
 
+      # Go to next question while taking personality quiz
       def next_question
-        @next_question = @last_question.id + 10
+        @next_question = @question.id + 10
         if @next_question > 70
           @next_question = @next_question - 69
         end
       end
 
+      # Go back to the last question while taking personality quiz
       def previous_question
         @previous_question = @question.id - 10
         if @previous_question < 0
