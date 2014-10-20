@@ -43,7 +43,7 @@ module Discovery
     def update
       #binding.pry
       if @answer.update_attributes(params[:answer])
-        if @next == 11
+        if @next == 70
           redirect_to quiz_path
         else
           redirect_to controller: 'questions', action: 'show', id: @next
