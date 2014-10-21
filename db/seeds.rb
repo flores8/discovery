@@ -1,24 +1,24 @@
 # Extravert/Introvert
 #1
-Discovery::Question.create(:question => 'When the phone rings do you', :option_1 => 'hurry to get to it first', :option_2 => 'hope someone else will answer', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+Discovery::Question.create(:question => 'You just found out that everyone will be leaving for the weekend and so you naturally', :option_1 => 'begin organizing get-together\'s with your friends', :option_2 => 'feel excited to get some quiet time to yourself', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #2
-Discovery::Question.create(:question => 'Waiting in line, do you often', :option_1 => 'chat with others', :option_2 => 'stick to business', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+Discovery::Question.create(:question => 'You go to the library', :option_1 => 'to be with other people (and also to study)', :option_2 => 'to find a quiet place to study.  It would be nice if you could find a place where you could be by yourself.', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #3
-Discovery::Question.create(:question => 'At a party, do you', :option_1 => 'interact with many, even strangers', :option_2 => 'interact with a few friends', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+Discovery::Question.create(:question => 'You find out there\'s a party tonight.', :option_1 => 'You can\'t wait! You feel excited to see old friends and meet new people.', :option_2 => 'You enjoy people but you don\'t feel the most comfortable or really enjoy big groups and talking with new people.', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #4
-Discovery::Question.create(:question => 'Does interacting with strangers', :option_1 => 'energize you', :option_2 => 'tax your reserves', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+Discovery::Question.create(:question => 'After interacting with strangers', :option_1 => 'You are energized and can\'t wait to meet more people.', :option_2 => 'You feel drained. Spending some time with yourself is the reward for being outgoing and talking to new people.', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #5
-Discovery::Question.create(:question => 'Do you tend to', :option_1 => 'say right out what\'s on your mind', :option_2 => 'keep your ears open', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+Discovery::Question.create(:question => 'Do you tend to', :option_1 => 'say right out what\'s on your mind, in fact you usually do your thinking out loud.', :option_2 => 'think before you talk and often times only say what\'s on your mind if you\'re asked.', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #6
-Discovery::Question.create(:question => 'Do you think of yourself as', :option_1 => 'an outgoing person', :option_2 => 'a private person', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+Discovery::Question.create(:question => 'Would you consider yourself', :option_1 => 'a public person (you feel comfortable sharing personal information freely)', :option_2 => 'a private person (you do open up but not to everyone and not always very comfortably)', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #7
-Discovery::Question.create(:question => 'Are you the kind of person who', :option_1 => 'is rather talkative', :option_2 => 'doesn\'t miss much', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+Discovery::Question.create(:question => 'In a conversation are you most likely the one', :option_1 => 'talking', :option_2 => 'listening', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #8
-Discovery::Question.create(:question => 'At work do you tend to', :option_1 => 'be sociable with your colleagues', :option_2 => 'keep more to yourself', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+Discovery::Question.create(:question => 'Would you prefer', :option_1 => 'being the center of attention', :option_2 => 'not to be the center of attention', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #9
-Discovery::Question.create(:question => 'Do you consider yourself', :option_1 => 'a good conversationalist', :option_2 => 'a good listener', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+Discovery::Question.create(:question => 'Are you more likely to', :option_1 => 'act and then think', :option_2 => 'think and then act', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 #10
-Discovery::Question.create(:question => 'Are you inclined to be', :option_1 => 'easy to approach', :option_2 => 'somewhat reserved', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+Discovery::Question.create(:question => 'Do you find greater satisfaction', :option_1 => 'having lots of interests but not necessarily mastering each one or going into great depth.', :option_2 => 'in exploring each interest in depth and understanding the differetn aspects of it and becoming a master in that area.', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
 
 # Sensory/Intuitive
 #1
