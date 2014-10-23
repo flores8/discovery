@@ -22,7 +22,7 @@ Discovery::Question.create(:question => 'Do you find greater satisfaction', :opt
 
 # Sensory/Intuitive
 #1
-Discovery::Question.create(:question => 'Are you more', :option_1 => 'observant', :option_2 => 'introspective', :personality_type => "Sensory/Intuitive", :option_1_value => 'Sensory', :option_2_value => 'Intuitive')
+Discovery::Question.create(:question => 'In this moment you are', :option_1 => 'more focused on the present moment and concentrating on this personality test and possibly even the color of the buttons and the different shapes.', :option_2 => 'more focused on the meaning behind this question and what this question is trying to uncover about your personality or what it suggests about you in your day-to-day life (if so click "Not Sure?" below).', :personality_type => "Sensory/Intuitive", :option_1_value => 'Sensory', :option_2_value => 'Intuitive')
 #2
 Discovery::Question.create(:question => 'Is it worse to', :option_1 => 'have your head in the clouds', :option_2 => 'be in a rut', :personality_type => "Sensory/Intuitive", :option_1_value => 'Sensory', :option_2_value => 'Intuitive')
 #3
@@ -42,7 +42,7 @@ Discovery::Question.create(:question => 'Common sense is', :option_1 => 'usually
 #10
 Discovery::Question.create(:question => 'Children often do not', :option_1 => 'make themselves useful enough', :option_2 => 'exercise their fantasy enough', :personality_type => "Sensory/Intuitive", :option_1_value => 'Sensory', :option_2_value => 'Intuitive')
 #11
-Discovery::Question.create(:question => 'Are you more frequently', :option_1 => 'a practical sort of person', :option_2 => 'a fanciful sort of person', :personality_type => "Sensory/Intuitive", :option_1_value => 'Sensory', :option_2_value => 'Intuitive')
+Discovery::Question.create(:question => 'Your company\'s CEO called together all managers.  She ran through some numbers that illustrated the troubled times of your company and explained that if things didn\'t improve some layoff\'s would happen.', :option_1 => 'a practical sort of person', :option_2 => 'a fanciful sort of person', :personality_type => "Sensory/Intuitive", :option_1_value => 'Sensory', :option_2_value => 'Intuitive')
 #12
 Discovery::Question.create(:question => 'Do you speak more in', :option_1 => 'particulars than generalities', :option_2 => 'generalities than particulars', :personality_type => "Sensory/Intuitive", :option_1_value => 'Sensory', :option_2_value => 'Intuitive')
 #13
