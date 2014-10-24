@@ -65,45 +65,45 @@ Discovery::Question.create(:question => 'It is more natural for you to', :option
 
 # Thinking/Feeling
 #1
-Discovery::Question.create(:question => 'With people are you usually more', :option_1 => 'firm', :option_2 => 'gentle', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'When making a decision are you most naturally inclined to base it on', :option_1 => 'what makes the most sense even if you would rather do something else', :option_2 => 'what you think is right even if it doesn\'t make most sense.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #2
-Discovery::Question.create(:question => 'Are you more comfortable in making', :option_1 => 'critical judgments', :option_2 => 'value judgements', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'You are working on a project. You\'re motivated to do a great job because you desire', :option_1 => 'achievement and accomplishment.', :option_2 => 'appreciation.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #3
 Discovery::Question.create(:question => 'In making up your mind are you more likely to go by', :option_1 => 'data', :option_2 => 'desires', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #4
-Discovery::Question.create(:question => 'In sizing up others do you tend to be', :option_1 => 'objective and impersonal', :option_2 => 'friendly and personal', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'When making a decision, I more naturally use', :option_1 => 'logic and reason.', :option_2 => 'passion and desire.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #5
-Discovery::Question.create(:question => 'Which appeals to you more', :option_1 => 'consistency of thought', :option_2 => 'harmonious relationships', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'In a competition', :option_1 => 'It is important for you to win and to be the best.', :option_2 => 'It is important that everyone is happy, winning is less important.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #6
-Discovery::Question.create(:question => 'If you must disappoint someone are you usually', :option_1 => 'frank and straightforward', :option_2 => 'warm and considerate', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'Those who know me best understand my need to be', :option_1 => 'brief and concise (right to the point).', :option_2 => 'warm and friendly.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #7
-Discovery::Question.create(:question => 'In a heated discussion, do you', :option_1 => 'stick to your guns', :option_2 => 'look for common ground', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'Which is more true of you?', :option_1 => 'Competition is in my bones.', :option_2 => 'Helping people is in my bones.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #8
 Discovery::Question.create(:question => 'Is it better to be', :option_1 => 'just', :option_2 => 'merciful', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #9
-Discovery::Question.create(:question => 'When in charge of others do you tend to be', :option_1 => 'firm and unbending', :option_2 => 'forgiving and lenient', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'When making a choice that will impact others would you rather', :option_1 => 'avoid all the messy emotional consequences of your choice and consider what is most logical. You may not do this but you wish you could.', :option_2 => 'really consider the impact your choice will have on others, putting yourself intheir position and looking at your choice from their perspective.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #10
-Discovery::Question.create(:question => 'Are you more often', :option_1 => 'a cool-headed person', :option_2 => 'a warm-hearted person', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'If someone asks you a question you naturally want to answer', :option_1 => 'truthfully.', :option_2 => 'in a way that will make the other person happy.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #11
-Discovery::Question.create(:question => 'Which is more of a compliment:', :option_1 => '"There\'s a logical person"', :option_2 => '"There\'s a sentimental person"', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'Which is more true of you?', :option_1 => 'I am not easily blinded by my feelings.', :option_2 => 'My feelings sometimes clouds my judgement.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #12
 Discovery::Question.create(:question => 'Which rules you more', :option_1 => 'your thoughts', :option_2 => 'your feelings', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #13
-Discovery::Question.create(:question => 'Is it worse to be', :option_1 => 'a softy', :option_2 => 'hard-nosed', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'You believe feelings are valid when', :option_1 => 'you can make sense of them.', :option_2 => 'you feel them - all feelings are valid.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #14
-Discovery::Question.create(:question => 'In trying circumstances are you sometimes', :option_1 => 'too unsympathetic', :option_2 => 'too sympathetic', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'When someone states something with certainty, you more often', :option_1 => 'automatically see the flaws or loopholes in their argument. You may not point them out (or you might!) but you see them.', :option_2 => 'automatically see their good intentions and desires in what they said. You may not point them out (or you might!) but you see the best in people.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #15
-Discovery::Question.create(:question => 'Do you think of yourself as a', :option_1 => 'tough-minded person', :option_2 => 'tender-hearted person', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'You more often', :option_1 => 'have to work hard to be patient and understanding with people\'s emotions.', :option_2 => 'naturally and without effort understand people\'s emotions.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #16
-Discovery::Question.create(:question => 'Do you value in yourself more that you are', :option_1 => 'reasonable', :option_2 => 'devoted', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'Would you rather the people around you', :option_1 => 'simply did their best without you having to tell them.', :option_2 => 'did their best because of your help coaching and encouraging them.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #17
-Discovery::Question.create(:question => 'Which seems the greater fault', :option_1 => 'to be too compassionate', :option_2 => 'to be too dispassionate', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'When considering a problem would you more enjoy', :option_1 => 'stepping back and considering it logically.', :option_2 => 'considering how your choice will affect others.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #18
 Discovery::Question.create(:question => 'Are you swayed more by', :option_1 => 'convincing evidence', :option_2 => 'a touching appeal', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #19
 Discovery::Question.create(:question => 'Which do you wish more for yourself', :option_1 => 'strength of will', :option_2 => 'strength of emotion', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 #20
-Discovery::Question.create(:question => 'Do you see yourself as basically', :option_1 => 'thick-skinned', :option_2 => 'thin-skinned', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+Discovery::Question.create(:question => 'If someone were to describe you which one would be more accurate (you\'re probably neither but which is closest to you)', :option_1 => 'unemotional or cold.', :option_2 => 'overemotional.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
 
 
 
