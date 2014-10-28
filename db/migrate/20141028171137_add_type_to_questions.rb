@@ -1,6 +1,6 @@
-class AddTypeToQuestions < ActiveRecord::Migration
+class AddTypeToQuestion < ActiveRecord::Migration
   def change
-    add_column :questions, :type, :string
-    add_index :questions, :type
+    add_column :question, :type, :string
+    add_index :question, :type
   end
 end
