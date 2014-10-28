@@ -109,11 +109,11 @@ Discovery::Question.create(:question => 'If someone were to describe you which o
 
 # Judging/Perceiving
 #1
-Discovery::Question.create(:question => 'Is clutter in the workplace something you', :option_1 => 'take time to straighten up', :option_2 => 'tolerate pretty well', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'You are invited to go to a conference which will be held in three months', :option_1 => 'You see the invitation and decide immediately that you would or would not be attending. You make the necessary arrangements and feel relieved to have made the decision.', :option_2 => 'You would like to keep your options open, something better might come along between now and three months.  You place the invitation in a safe place and feel relieved to have your options open.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #2
-Discovery::Question.create(:question => 'Is it your way to', :option_1 => 'make up your mind quickly', :option_2 => 'pick and choose at some length', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Is it your way to', :option_1 => 'decide and move on.', :option_2 => 'leave your options open.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #3
-Discovery::Question.create(:question => 'Do you prefer contracts to be', :option_1 => 'signed, sealed, and delivered', :option_2 => 'settled on a handshake', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'You started a blog two months ago.', :option_1 => 'You planned to post every week and you have.  Every Tuesday morning a new post goes out.  You have even written some extra posts just in case you get busy one week and don\'t have one ready for that Tuesday\'s post.', :option_2 => 'You enjoy your blog.  It\'s fun to experiment with something new.  You post whenever something comes up that you want to share.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #4
 Discovery::Question.create(:question => 'Are you more satisfied having', :option_1 => 'a finished product', :option_2 => 'work in progress', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #5
@@ -129,7 +129,7 @@ Discovery::Question.create(:question => 'Are you more prone to', :option_1 => 'n
 #10
 Discovery::Question.create(:question => 'In most situations are you more', :option_1 => 'deliberate', :option_2 => 'spontaneous', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #11
-Discovery::Question.create(:question => 'When finishing a job, do you like to', :option_1 => 'tie up all the loose ends', :option_2 => 'more on to something else', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Do you prefer things to be', :option_1 => 'ordered, structured and planned.', :option_2 => 'spontaneous, open-ended, and casual.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #12
 Discovery::Question.create(:question => 'Do you prefer to work', :option_1 => 'to deadlines', :option_2 => 'just whenever', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #13

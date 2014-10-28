@@ -10,8 +10,8 @@ module Discovery
 
     # GET /questions
     def index
-      binding.pry
-      # @questions = Discovery::Question.all
+      # binding.pry
+      @questions = Discovery::Question.all
     end
 
     def show
@@ -65,18 +65,20 @@ module Discovery
     private
       # If you've answered some questions let's find out what question you're on.
       def current_question 
-        if current_user
+        if current_user && 
           @n = 1
           while current_user.answers.where(id: @n).present?
             @n += 1
           end
-          @last_answered = current_user.answers.last
-          @last_question = Discovery::Question.find(@last_answered.question)
+          if current_user.answers.last   # if a user has any answers 
+            @last_answered = current_user.answers.last
+            @last_question = Discovery::Question.find(@last_answered.question)
+          end
         end
       end
       # Once we've found out what question you're on let's send you to the next question
       def go_to_next_question
-        if current_user
+        if current_user && current_user.answers.last
           @go_to_next_question = @last_question.id + 10
           if @go_to_next_question > 70
             @go_to_next_question = @go_to_next_question - 69
