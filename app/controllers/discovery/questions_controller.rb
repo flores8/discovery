@@ -10,7 +10,6 @@ module Discovery
 
     # GET /questions
     def index
-      # binding.pry
       @questions = Discovery::Question.all
     end
 

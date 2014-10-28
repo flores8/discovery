@@ -29,7 +29,7 @@ module Discovery
       #binding.pry
       @answer.user = current_user 
       if @answer.save
-      	if @next == 11
+      	if @next == 80
       		redirect_to quiz_path
       	else
 	        redirect_to controller: 'questions', action: 'show', id: @next

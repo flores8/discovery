@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140627183120) do
+ActiveRecord::Schema.define(:version => 20141028175249) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20140627183120) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "question"
+    t.integer  "user_id"
   end
 
   create_table "discovery_personality_answers", :force => true do |t|
@@ -84,7 +85,10 @@ ActiveRecord::Schema.define(:version => 20140627183120) do
     t.string   "option_2_value"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "question_type"
   end
+
+  add_index "discovery_questions", ["question_type"], :name => "index_discovery_questions_on_question_type"
 
   create_table "likes", :force => true do |t|
     t.integer  "user_id"
@@ -119,6 +123,14 @@ ActiveRecord::Schema.define(:version => 20140627183120) do
 
   add_index "majors", ["name"], :name => "index_majors_on_name"
   add_index "majors", ["slug"], :name => "index_majors_on_slug"
+
+  create_table "pg_search_documents", :force => true do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "prospects", :force => true do |t|
     t.integer  "major_id"
