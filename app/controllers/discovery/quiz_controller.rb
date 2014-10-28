@@ -20,19 +20,23 @@ module Discovery
 
     private
       # If you've answered some questions let's find out what question you're on.
-      def current_question 
-        @n = 1
-        while current_user.answers.where(id: @n).present?
-          @n += 1
+      def current_question
+        if current_user && current_user.answers.present?
+          @n = 1
+          while current_user.answers.where(id: @n).present?
+            @n += 1
+          end
+          @last_answered = current_user.answers.last
+          @last_question = Discovery::Question.find(@last_answered.question)
         end
-        @last_answered = current_user.answers.last
-        @last_question = Discovery::Question.find(@last_answered.question)
       end
 
       def next_question
-        @next_question = @last_question.id + 10
-        if @next_question > 70
-          @next_question = @next_question - 69
+        if current_user && current_user.answers.present?
+          @next_question = @last_question.id + 10
+          if @next_question > 70
+            @next_question = @next_question - 69
+          end
         end
       end
   end

@@ -149,4 +149,20 @@ Discovery::Question.create(:question_type => "quiz", :question => 'Life is about
 #20
 Discovery::Question.create(:question_type => "quiz", :question => 'Are you more', :option_1 => 'planned.', :option_2 => 'unplanned.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 
+# Self-Guided
+#####################################
+
+# Extravert/Introvert
+Discovery::Question.create(:question_type => "self-guided", :question => 'Extravert or Intravert?', :option_1 => 'I am more Extraverted.', :option_2 => 'I am more Introverted.', :personality_type => "Extravert/Introvert", :option_1_value => 'Extravert', :option_2_value => 'Introvert')
+
+# Sensory/Intuitive
+Discovery::Question.create(:question_type => "self-guided", :question => 'Sensor or Intuitive?', :option_1 => 'I am more of a Sensor.', :option_2 => 'I am more of an Intuitive.', :personality_type => "Sensory/Intuitive", :option_1_value => 'Sensory', :option_2_value => 'Intuitive')
+
+# Thinking/Feeling
+Discovery::Question.create(:question_type => "self-guided", :question => 'Thinker or Feeler?', :option_1 => 'I am more of a Thinker.', :option_2 => 'I am more of a Feeler.', :personality_type => "Thinking/Feeling", :option_1_value => 'Thinking', :option_2_value => 'Feeling')
+
+# Judging/Perceiving
+Discovery::Question.create(:question_type => "self-guided", :question => 'Judger or Perceiver?', :option_1 => 'I am more of a Judger.', :option_2 => 'I am more of an Perceiver.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+
+
 puts "Seed finished successfully!"

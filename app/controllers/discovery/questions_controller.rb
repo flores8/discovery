@@ -14,7 +14,6 @@ module Discovery
     end
 
     def show
-
       if answer_update = current_user.answers.find_by_question(Discovery::Question.find(params[:id]))
         @answer = answer_update
       else
@@ -64,7 +63,7 @@ module Discovery
     private
       # If you've answered some questions let's find out what question you're on.
       def current_question 
-        if current_user && 
+        if current_user
           @n = 1
           while current_user.answers.where(id: @n).present?
             @n += 1
@@ -87,17 +86,30 @@ module Discovery
 
       # Go to next question while taking personality quiz
       def next_question
-        @next_question = @question.id + 10
-        if @next_question > 70
-          @next_question = @next_question - 69
+        if @question.question_type == "quiz"
+          @next_question = @question.id + 10
+          if @next_question > 70
+            @next_question = @next_question - 69
+          end
+        elsif @question.question_type == "self-guided"
+          @next_question = @question.id + 1
+          if @next_question == 75
+            redirect_to quiz_path
+          end
         end
       end
 
       # Go back to the last question while taking personality quiz
       def previous_question
-        @previous_question = @question.id - 10
-        if @previous_question < 0
-          @previous_question = @previous_question + 69
+        if @question.question_type == "quiz"
+          @previous_question = @question.id - 10
+          if @previous_question < 0
+            @previous_question = @previous_question + 69
+          end
+        elsif @question.question_type == "self-guided"
+          if @question.id > 71
+            @previous_question = @question.id - 1
+          end
         end
       end
 
