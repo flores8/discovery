@@ -115,38 +115,38 @@ Discovery::Question.create(:question => 'Is it your way to', :option_1 => 'decid
 #3
 Discovery::Question.create(:question => 'You started a blog two months ago.', :option_1 => 'You planned to post every week and you have.  Every Tuesday morning a new post goes out.  You have even written some extra posts just in case you get busy one week and don\'t have one ready for that Tuesday\'s post.', :option_2 => 'You enjoy your blog.  It\'s fun to experiment with something new.  You post whenever something comes up that you want to share.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #4
-Discovery::Question.create(:question => 'Are you more satisfied having', :option_1 => 'a finished product', :option_2 => 'work in progress', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'You consider deadlines', :option_1 => 'seriously.', :option_2 => 'as flexible.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #5
-Discovery::Question.create(:question => 'On the job do you want your activities', :option_1 => 'scheduled', :option_2 => 'unscheduled', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'On the job do you want your activities', :option_1 => 'scheduled.', :option_2 => 'unscheduled.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #6
-Discovery::Question.create(:question => 'Do you more often prefer', :option_1 => 'final, unalterable statements', :option_2 => 'tentative, preliminary statements', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Do you', :option_1 => 'quickly and easily come to a decision.', :option_2 => 'have a difficult time deciding and often delay your decision.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #7
-Discovery::Question.create(:question => 'At work, is it more natural for you to', :option_1 => 'point out mistakes', :option_2 => 'try to please others', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'You are learning something new.', :option_1 => 'You prefer precise steps and detailed instructions.', :option_2 => 'You like to make it up as you go along.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #8
-Discovery::Question.create(:question => 'Are you more comfortable', :option_1 => 'after a decision', :option_2 => 'before a decision', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Are you more comfortable', :option_1 => 'after a decision.', :option_2 => 'before a decision.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #9
-Discovery::Question.create(:question => 'Are you more prone to', :option_1 => 'nailing things down', :option_2 => 'exploring the possibilities', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Are you more likely to', :option_1 => 'follow the rules.', :option_2 => 'change the rules to fit the situation.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #10
-Discovery::Question.create(:question => 'In most situations are you more', :option_1 => 'deliberate', :option_2 => 'spontaneous', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'In most situations are you more', :option_1 => 'deliberate.', :option_2 => 'spontaneous.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #11
-Discovery::Question.create(:question => 'Do you prefer things to be', :option_1 => 'ordered, structured and planned.', :option_2 => 'spontaneous, open-ended, and casual.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Do you prefer things to be', :option_1 => 'ordered, structured, and planned.', :option_2 => 'spontaneous, open-ended, and casual.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #12
-Discovery::Question.create(:question => 'Do you prefer to work', :option_1 => 'to deadlines', :option_2 => 'just whenever', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Would you rather', :option_1 => 'work now and play later.', :option_2 => 'work and play as you go along. If you had to choose you would probably play first and work later.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #13
-Discovery::Question.create(:question => 'Do you tend to choose', :option_1 => 'rather carefully', :option_2 => 'somewhat impulsively', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'You feel most excited and satisfied when', :option_1 => 'you\'ve completed a project.', :option_2 => 'you\'re about to start a project.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #14
-Discovery::Question.create(:question => 'Are you inclined to be more', :option_1 => 'hurried', :option_2 => 'leisurely', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Are you inclined to be more', :option_1 => 'hurried.', :option_2 => 'leisurely.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #15
-Discovery::Question.create(:question => 'Do you usually want things', :option_1 => 'settled and decided', :option_2 => 'just penciled in', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Do you usually want things', :option_1 => 'settled and decided.', :option_2 => 'just penciled in.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #16
-Discovery::Question.create(:question => 'Would you say you are more', :option_1 => 'serious and determined', :option_2 => 'easy going', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Would you say you are more', :option_1 => 'serious and determined.', :option_2 => 'easy going.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #17
-Discovery::Question.create(:question => 'Do you feel better about', :option_1 => 'coming to closure', :option_2 => 'keeping your options open', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Do you feel better about', :option_1 => 'coming to closure.', :option_2 => 'keeping your options open.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #18
-Discovery::Question.create(:question => 'Is it preferable mostly to', :option_1 => 'make sure things are arranged', :option_2 => 'just let things happen naturally', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Is it preferable mostly to', :option_1 => 'make sure things are arranged.', :option_2 => 'just let things happen naturally.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #19
-Discovery::Question.create(:question => 'Do you tend to notice', :option_1 => 'disorderliness', :option_2 => 'opportunities for change', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Life is about', :option_1 => 'seeing results.', :option_2 => 'trying new things.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 #20
-Discovery::Question.create(:question => 'Are you more', :option_1 => 'routinized', :option_2 => 'whimsical', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
+Discovery::Question.create(:question => 'Are you more', :option_1 => 'planned.', :option_2 => 'unplanned.', :personality_type => "Judging/Perceiving", :option_1_value => 'Judging', :option_2_value => 'Perceiving')
 
 puts "Seed finished successfully!"
