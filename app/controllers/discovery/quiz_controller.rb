@@ -18,6 +18,9 @@ module Discovery
     	@perceiving = Discovery::Answer.where(user_id: current_user.id).where(value: "Perceiving").count
     end
 
+    def recommendations
+    end
+
     private
       # If you've answered some questions let's find out what question you're on.
       def current_question
