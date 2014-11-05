@@ -6,7 +6,6 @@ module Discovery
     before_filter :current_question, :go_to_next_question, only: [:index]
     before_filter :next_question, :previous_question, only: [:show]
     before_filter :authenticate_user!, only: [:show, :edit, :update, :destroy]
-    # binding.pry
 
     # GET /questions
     def index
@@ -20,6 +19,11 @@ module Discovery
         @answer = Discovery::Answer.new
         @answer.question = @question.id
         @answer.user_id = current_user.id
+        # if @question.question_type == "self-guided"
+        #   if @question.option_1_value == "Extravert"
+        #     @answer.user.ei = @answer.value
+        #   end
+        # end
       end
       
       
@@ -77,9 +81,18 @@ module Discovery
       # Once we've found out what question you're on let's send you to the next question
       def go_to_next_question
         if current_user && current_user.answers.last
-          @go_to_next_question = @last_question.id + 10
-          if @go_to_next_question > 70
-            @go_to_next_question = @go_to_next_question - 69
+          # Self-Guided Routing
+          if @question.question_type == "self-guided"
+            @go_to_next_question = @last_question.id + 1
+            if @go_to_next_question == 75
+              redirect_to results_path
+            end
+          # Normal Personality Quiz Routing
+          elsif @question.question_type == "quiz"
+            @go_to_next_question = @last_question.id + 10
+            if @go_to_next_question > 70
+              @go_to_next_question = @go_to_next_question - 69
+            end
           end
         end
       end
@@ -94,7 +107,7 @@ module Discovery
         elsif @question.question_type == "self-guided"
           @next_question = @question.id + 1
           if @next_question == 75
-            redirect_to quiz_path
+            redirect_to results_path
           end
         end
       end

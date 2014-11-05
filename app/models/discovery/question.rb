@@ -7,7 +7,7 @@ module Discovery
   	# 		@start_self_guide = self.find(71)
   	# 		@next_question = @starts_self_guide.id + 1
   	# 		if @next_question == 75
-  	# 			redirect_to quiz_path
+  	# 			redirect_to results_path
   	# 		end
   	# 	elsif self.where(question_type: "quiz")
   	# 		# Logic for the next question for quiz questions go... 

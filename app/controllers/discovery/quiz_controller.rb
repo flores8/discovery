@@ -16,6 +16,35 @@ module Discovery
     	@feeling = Discovery::Answer.where(user_id: current_user.id).where(value: "Feeling").count
     	@judging = Discovery::Answer.where(user_id: current_user.id).where(value: "Judging").count
     	@perceiving = Discovery::Answer.where(user_id: current_user.id).where(value: "Perceiving").count
+      
+      # Introvert or Extravert?
+      if @extravert > @introvert
+        @ei = "extravert"
+      else
+        @ei = "introvert"
+      end
+
+      # Sensing or Intuitive?
+      if @sensory > @intuitive
+        @si = "sensing"
+      else
+        @si = "intuitive"
+      end
+
+      # Thinking or Feeling?
+      if @thinking > @feeling
+        @tf = "thinking"
+      else
+        @tf = "feeling"
+      end
+
+      # Judging or perceiving
+      if @judging > @perceiving
+        @jp = "judging"
+      else
+        @jp = "perceiving"
+      end
+
     end
 
     def recommendations

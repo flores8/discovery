@@ -24,7 +24,7 @@
 <% end %>
 
 <p><%= number_to_percentage(current_discovery_user.progress, precision: 0) %> complete.</p>
-<p><%= link_to "See My Results So Far", quiz_path %></p>
+<p><%= link_to "See My Results So Far", results_path %></p>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

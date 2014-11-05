@@ -26,11 +26,11 @@ module Discovery
     end
 
     def create
-      #binding.pry
       @answer.user = current_user 
+
       if @answer.save
-      	if @next == 80
-      		redirect_to quiz_path
+      	if @next == (80 || 75)
+      		redirect_to results_path
       	else
 	        redirect_to controller: 'questions', action: 'show', id: @next
 	      end
@@ -43,8 +43,8 @@ module Discovery
     def update
       #binding.pry
       if @answer.update_attributes(params[:answer])
-        if @next == 80
-          redirect_to quiz_path
+        if @next == (80 || 75)
+          redirect_to results_path
         else
           redirect_to controller: 'questions', action: 'show', id: @next
         end
@@ -70,11 +70,18 @@ module Discovery
       end
 
       def next_question
-        @next = @answer.question + 10
-        if @next > 70
-          @next = @next - 69
+        if @answer.question == (71 || 72 || 73 || 74)
+          @next = @answer.question + 1
+          if @next == 75
+            redirect_to results_path
+          end
+        else
+          @next = @answer.question + 10
+          if @next > 70
+            @next = @next - 69
+          end
         end
-      end
 
+    end
   end
 end
