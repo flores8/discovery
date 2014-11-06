@@ -27,9 +27,20 @@ module Discovery
 
     def create
       @answer.user = current_user 
-
+      @question = Discovery::Question.find(@answer.question)
+      if @question.question_type == "self-guided"
+        if @question.personality_type == "Extravert/Introvert"
+          current_discovery_user.update_attribute :ei, @answer.value
+        elsif @question.personality_type == "Sensory/Intuitive"
+          current_discovery_user.update_attribute :si, @answer.value
+        elsif @question.personality_type == "Thinking/Feeling"
+          current_discovery_user.update_attribute :tf, @answer.value
+        elsif @question.personality_type == "Judging/Perceiving"
+          current_discovery_user.update_attribute :jp, @answer.value
+        end
+      end
       if @answer.save
-      	if @next == (80 || 75)
+      	if @next == 80 || @next == 75
       		redirect_to results_path
       	else
 	        redirect_to controller: 'questions', action: 'show', id: @next
@@ -41,9 +52,20 @@ module Discovery
 
     # PATCH/PUT /answers/1
     def update
-      #binding.pry
       if @answer.update_attributes(params[:answer])
-        if @next == (80 || 75)
+        @question = Discovery::Question.find(@answer.question)
+        if @question.question_type == "self-guided"
+          if @question.personality_type == "Extravert/Introvert"
+            current_discovery_user.update_attribute :ei, @answer.value
+          elsif @question.personality_type == "Sensory/Intuitive"
+            current_discovery_user.update_attribute :si, @answer.value
+          elsif @question.personality_type == "Thinking/Feeling"
+            current_discovery_user.update_attribute :tf, @answer.value
+          elsif @question.personality_type == "Judging/Perceiving"
+            current_discovery_user.update_attribute :jp, @answer.value
+          end
+        end
+        if @next == 80 || @next == 75
           redirect_to results_path
         else
           redirect_to controller: 'questions', action: 'show', id: @next
@@ -70,18 +92,15 @@ module Discovery
       end
 
       def next_question
-        if @answer.question == (71 || 72 || 73 || 74)
+        if @answer.question == 71 || @answer.question == 72 || @answer.question == 73 || @answer.question == 74
           @next = @answer.question + 1
-          if @next == 75
-            redirect_to results_path
-          end
         else
           @next = @answer.question + 10
           if @next > 70
             @next = @next - 69
           end
         end
+      end
 
-    end
   end
 end
