@@ -88,10 +88,13 @@ module Discovery
       def go_to_next_question
         if current_user && current_user.answers.last
           # Self-Guided Routing
-          if @question.question_type == "self-guided"
+          if current_question.question_type == "self-guided"
             @go_to_next_question = @last_question.id + 1
+            # if @go_to_next_question == 75
+            #   redirect_to results_path
+            # end
           # Normal Personality Quiz Routing
-          elsif @question.question_type == "quiz"
+          elsif current_question.question_type == "quiz"
             @go_to_next_question = @last_question.id + 10
             if @go_to_next_question > 70
               @go_to_next_question = @go_to_next_question - 69
