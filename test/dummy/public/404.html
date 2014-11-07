@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>404 - The page you were looking for doesn't exist</title>
   <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
+    body { background-color: #fafafa; text-align: center; font-family: 'Source Sans Pro', sans-serif;; }
+    div.four {
+      width:25em;
+      height:36em;
+      position:absolute;
+      left:50%;
+      top:50%;
+      margin:-20em 0 0 -12.5em;
+    }
+    h1.four {
+      font-size: 15em;
+      color: #e75f51;
+      margin: 0;
+    }
+    p.four {
+      color: #8BA0B3;
+      font-size: 18px;
+      padding-bottom: 3em;
+    }
+    a.four {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1.1em;
+      text-align: center;
+      border: 2px solid #8BA0B3;
+      border-radius: 2px;
+      padding: 1em 2em;
+      color: #8BA0B3;
+      text-decoration: none;
+      transition: all .5s;
+    }
+    a.four:hover {
+      background: #e75f51;
+      border: 2px solid #e75f51;
+      color: white;
+      text-decoration: none;
+      border: none;
+      transition: all .4s;
     }
     h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
   </style>
 </head>
 
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
+  <div class="four">
+    <h1 class="four">404</h1>
+    <p class="four">Uh-oh, the page you're looking for doesn't exist.</p>
+    <a href="/", class="four">Return Home</a>
   </div>
 </body>
 </html>
