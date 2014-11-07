@@ -31,13 +31,12 @@ module Discovery
           end
         end
       end
-      
-      
     end
 
     # GET /questions/new
     def new
       @question = Discovery::Question.new 
+      authorize @question
     end
 
     # GET /questions/1/edit
@@ -46,6 +45,7 @@ module Discovery
 
     # POST /questions
     def create
+      binding.pry
       @question = Discovery::Question.new(params[:question])
 
       if @question.save

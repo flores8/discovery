@@ -7,7 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+    	<div class="container">
+	      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    	</div>
+    </div>
+  <% end %>
+<% end %>
 <%= yield %>
 
 </body>
