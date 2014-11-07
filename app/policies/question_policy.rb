@@ -1,2 +1,0 @@
-class QuestionPolicy < ApplicationPolicy
-end

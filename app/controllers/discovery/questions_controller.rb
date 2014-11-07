@@ -41,13 +41,13 @@ module Discovery
 
     # GET /questions/1/edit
     def edit
+      authorize @question
     end
 
     # POST /questions
     def create
-      binding.pry
       @question = Discovery::Question.new(params[:question])
-
+      authorize @question
       if @question.save
         redirect_to @question, notice: 'Question was successfully created.'
       else
@@ -57,6 +57,7 @@ module Discovery
 
     # PATCH/PUT /questions/1
     def update
+      authorize @question
       if @question.update_attributes(params[:question])
         redirect_to @question, notice: 'Question was successfully updated.'
       else
@@ -66,6 +67,7 @@ module Discovery
 
     # DELETE /questions/1
     def destroy
+      authorize @question
       @question.destroy
       redirect_to questions_url, notice: 'Question was successfully destroyed.'
     end

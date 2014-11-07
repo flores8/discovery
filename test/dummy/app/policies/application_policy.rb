@@ -1,10 +1,9 @@
-class Discovery::ApplicationPolicy
+class ApplicationPolicy
   attr_reader :user, :record
 
   def initialize(user, record)
     @user = user
     @record = record
-    binding.pry
   end
 
   def index?
