@@ -10,4 +10,8 @@ class Discovery::QuestionPolicy < ApplicationPolicy
   def new?
     create?
   end
+
+  def destroy?
+  	create?
+  end
 end
