@@ -13,6 +13,7 @@ module Discovery
     end
 
     def show
+      # binding.pry
       if answer_update = current_user.answers.find_by_question(Discovery::Question.find(params[:id]))
         @answer = answer_update
       else
