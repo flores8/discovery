@@ -1,4 +1,4 @@
-class Discovery::QuestionPolicy < ApplicationPolicy
+class QuestionPolicy < ApplicationPolicy
 	def index?
     true
   end
