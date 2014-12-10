@@ -3,6 +3,7 @@ require_dependency "discovery/application_controller"
 module Discovery
   class QuizController < ApplicationController
     before_filter :current_question, :next_question, only: [:show]
+    before_filter :add_personality_type 
     before_filter :authenticate_user!
     def new
     end
@@ -48,9 +49,27 @@ module Discovery
     end
 
     def recommendations
+      current_user.personality_type = @personality_type
+      current_user.update_attribute(:personality_type, @personality_type)
+    end
+
+    def update
+
     end
 
     private
+      def add_personality_type
+        x = []
+        x << current_user.ei.first.downcase
+        if current_user.si == "Sensing"
+          x << current_user.si.first.downcase
+        elsif current_user.si == "Intuitive"
+          x << current_user.si[1].downcase
+        end
+        x << current_user.tf.first.downcase
+        x << current_user.jp.first.downcase
+        @personality_type = x.join
+      end
       # If you've answered some questions let's find out what question you're on.
       def current_question
         if current_user && current_user.answers.present?
