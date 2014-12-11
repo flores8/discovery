@@ -54,21 +54,22 @@ module Discovery
     end
 
     def update
-
     end
 
     private
       def add_personality_type
         x = []
-        x << current_user.ei.first.downcase
-        if current_user.si == "Sensing"
-          x << current_user.si.first.downcase
-        elsif current_user.si == "Intuitive"
-          x << current_user.si[1].downcase
+        if current_discovery_user.answers.present?
+          x << current_user.ei.first.downcase
+          if current_user.si == "Intuitive"
+            x << current_user.si[1].downcase
+          else
+            x << current_user.si[0].downcase
+          end
+          x << current_user.tf.first.downcase
+          x << current_user.jp.first.downcase
+          @personality_type = x.join
         end
-        x << current_user.tf.first.downcase
-        x << current_user.jp.first.downcase
-        @personality_type = x.join
       end
       # If you've answered some questions let's find out what question you're on.
       def current_question
