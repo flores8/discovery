@@ -21,7 +21,9 @@ module Discovery
       # Introvert or Extravert?
       if @extravert > @introvert
         @ei = "extravert"
-      else
+      elsif @extravert = @introvert
+        @ei = nil
+      elsif @extravert < @introvert
         @ei = "introvert"
       end
 
@@ -59,7 +61,7 @@ module Discovery
     private
       def add_personality_type
         x = []
-        if current_discovery_user.answers.present?
+        if current_discovery_user.answers > 10
           x << current_user.ei.first.downcase
           if current_user.si == "Intuitive"
             x << current_user.si[1].downcase

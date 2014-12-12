@@ -1,5 +1,4 @@
 Discovery::Engine.routes.draw do
-  get "quiz/new"
   resources :questions
   resources :answers
   get 'results' => "quiz#show" 
