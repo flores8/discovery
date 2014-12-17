@@ -2,9 +2,10 @@ require_dependency "discovery/application_controller"
 
 module Discovery
   class QuizController < ApplicationController
+    before_filter :authenticate_user!
     before_filter :current_question, :next_question, only: [:show]
     before_filter :add_personality_type 
-    before_filter :authenticate_user!
+
     def new
     end
 
@@ -61,7 +62,7 @@ module Discovery
     private
       def add_personality_type
         x = []
-        if current_discovery_user.answers > 10
+        if current_discovery_user.answers.count > 10
           x << current_user.ei.first.downcase
           if current_user.si == "Intuitive"
             x << current_user.si[1].downcase
