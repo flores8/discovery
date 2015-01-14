@@ -20,33 +20,41 @@ module Discovery
     	@perceiving = Discovery::Answer.where(user_id: current_user.id).where(value: "Perceiving").count
       
       # Introvert or Extravert?
-      if @extravert > @introvert
+      if (@extravert - @introvert) > 2
         @ei = "extravert"
-      elsif @extravert = @introvert
-        @ei = nil
-      elsif @extravert < @introvert
+      elsif (@introvert - @extravert) > 2
         @ei = "introvert"
+      else 
+        @ei = nil
       end
 
       # Sensing or Intuitive?
-      if @sensory > @intuitive
+      # make sure there is enough of a difference
+      # before assigning - in this case 3 point difference
+      if (@sensory - @intuitive) > 3
         @si = "sensing"
-      else
+      elsif (@intuitive - @sensory) > 3
         @si = "intuitive"
+      else
+        @si = nil
       end
 
       # Thinking or Feeling?
-      if @thinking > @feeling
+      if (@thinking - @feeling) > 3
         @tf = "thinking"
-      else
+      elsif (@feeling - @thinking) > 3
         @tf = "feeling"
+      else 
+        @tf = nil
       end
 
       # Judging or perceiving
-      if @judging > @perceiving
+      if (@judging - @perceiving) > 3
         @jp = "judging"
-      else
+      elsif (@perceiving - @judging) > 3
         @jp = "perceiving"
+      else
+        @jp = nil
       end
 
     end
@@ -62,7 +70,7 @@ module Discovery
     private
       def add_personality_type
         x = []
-        if current_discovery_user.answers.count > 10
+        if current_discovery_user.answers.count > 25
           x << current_user.ei.first.downcase
           if current_user.si == "Intuitive"
             x << current_user.si[1].downcase
