@@ -21,9 +21,9 @@ module Discovery
       
       # Introvert or Extravert?
       if (@extravert - @introvert) > 2
-        @ei = "extravert"
+        @ei = "Extravert"
       elsif (@introvert - @extravert) > 2
-        @ei = "introvert"
+        @ei = "Introvert"
       else 
         @ei = nil
       end
@@ -32,30 +32,35 @@ module Discovery
       # make sure there is enough of a difference
       # before assigning - in this case 3 point difference
       if (@sensory - @intuitive) > 3
-        @si = "sensing"
+        @si = "Sensory"
       elsif (@intuitive - @sensory) > 3
-        @si = "intuitive"
+        @si = "Intuitive"
       else
         @si = nil
       end
 
       # Thinking or Feeling?
       if (@thinking - @feeling) > 3
-        @tf = "thinking"
+        @tf = "Thinking"
       elsif (@feeling - @thinking) > 3
-        @tf = "feeling"
+        @tf = "Feeling"
       else 
         @tf = nil
       end
 
       # Judging or perceiving
       if (@judging - @perceiving) > 3
-        @jp = "judging"
+        @jp = "Judging"
       elsif (@perceiving - @judging) > 3
-        @jp = "perceiving"
+        @jp = "Perceiving"
       else
         @jp = nil
       end
+
+      current_discovery_user.update_attribute(:ei, @ei)
+      current_discovery_user.update_attribute(:si, @si)
+      current_discovery_user.update_attribute(:tf, @tf)
+      current_discovery_user.update_attribute(:jp, @jp)
 
     end
 
@@ -70,7 +75,7 @@ module Discovery
     private
       def add_personality_type
         x = []
-        if current_discovery_user.answers.count > 25
+        if current_discovery_user.progress > 25
           x << current_user.ei.first.downcase
           if current_user.si == "Intuitive"
             x << current_user.si[1].downcase
