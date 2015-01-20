@@ -3,6 +3,6 @@ All personalities:
 <% @personalities.each do |p| %>
 	<h3><%= p.name %></h3>
 	<p><%= p.description %></p>
-	<p><%= link_to "Edit", edit_personality_path(p) %></p>
+	<p><%= link_to "Edit", edit_personality_path(p) %> | <%= link_to "Delete", p, method: :delete, data: { confirm: "Are you sure? You will remove this personality from the database and can\'t get it back."} %></p>
 	<hr>
 <% end %>
