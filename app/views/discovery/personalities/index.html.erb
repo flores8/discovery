@@ -1,0 +1,8 @@
+All personalities: 
+<p><%= link_to "Add Personality", new_personality_path %></p>
+<% @personalities.each do |p| %>
+	<h3><%= p.name %></h3>
+	<p><%= p.description %></p>
+	<p><%= link_to "Edit", edit_personality_path(p) %></p>
+	<hr>
+<% end %>

@@ -3,7 +3,7 @@ require_dependency "discovery/application_controller"
 module Discovery
 	class PersonalitiesController < ApplicationController
 		before_filter :set_personality, only: [:show, :edit, :update, :destroy]
-		
+
 		def index
 			@personalities = Discovery::Personality.all
 		end
@@ -14,6 +14,9 @@ module Discovery
 
 		def new
 			@personality = Discovery::Personality.new
+		end
+
+		def edit
 		end
 
 		def create

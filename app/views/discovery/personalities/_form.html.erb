@@ -1,0 +1,8 @@
+<%= form_for(@personality) do |f| %>
+	<p>Personality Name (INTJ):</p>
+	<%= f.text_field :name %><br><br>
+
+	<p>Personality Description:</p>
+	<%= f.text_area :description %><br><br>
+	<%= f.submit %>
+<% end %>
