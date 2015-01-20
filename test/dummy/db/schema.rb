@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141028175249) do
+ActiveRecord::Schema.define(:version => 20150120184116) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -68,6 +68,15 @@ ActiveRecord::Schema.define(:version => 20141028175249) do
     t.integer  "question"
     t.integer  "user_id"
   end
+
+  create_table "discovery_personalities", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "discovery_personalities", ["name"], :name => "index_discovery_personalities_on_name"
 
   create_table "discovery_personality_answers", :force => true do |t|
     t.integer  "user_id"
