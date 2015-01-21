@@ -18,49 +18,69 @@ module Discovery
     	@feeling = Discovery::Answer.where(user_id: current_user.id).where(value: "Feeling").count
     	@judging = Discovery::Answer.where(user_id: current_user.id).where(value: "Judging").count
     	@perceiving = Discovery::Answer.where(user_id: current_user.id).where(value: "Perceiving").count
-      
+
       # Introvert or Extravert?
-      if (@extravert - @introvert) > 2
-        @ei = "Extravert"
-      elsif (@introvert - @extravert) > 2
-        @ei = "Introvert"
-      else 
-        @ei = nil
+      if @extravert > 0 || @introvert > 0
+        if (@extravert - @introvert) > 2
+          @ei = "Extravert"
+        elsif (@introvert - @extravert) > 2
+          @ei = "Introvert"
+        else 
+          @ei = nil
+        end
       end
 
+      
       # Sensing or Intuitive?
       # make sure there is enough of a difference
       # before assigning - in this case 3 point difference
-      if (@sensory - @intuitive) > 3
-        @si = "Sensory"
-      elsif (@intuitive - @sensory) > 3
-        @si = "Intuitive"
-      else
-        @si = nil
+      if @sensory > 0 || @intuitive > 0
+        if (@sensory - @intuitive) > 3
+          @si = "Sensory"
+        elsif (@intuitive - @sensory) > 3
+          @si = "Intuitive"
+        else
+          @si = nil
+        end
       end
 
       # Thinking or Feeling?
-      if (@thinking - @feeling) > 3
-        @tf = "Thinking"
-      elsif (@feeling - @thinking) > 3
-        @tf = "Feeling"
-      else 
-        @tf = nil
+      if @thinking > 0 || @feeling > 0
+        if (@thinking - @feeling) > 3
+          @tf = "Thinking"
+        elsif (@feeling - @thinking) > 3
+          @tf = "Feeling"
+        else 
+          @tf = nil
+        end
       end
 
       # Judging or perceiving
-      if (@judging - @perceiving) > 3
-        @jp = "Judging"
-      elsif (@perceiving - @judging) > 3
-        @jp = "Perceiving"
-      else
-        @jp = nil
+      if @judging > 0 || @perceiving > 0
+        if (@judging - @perceiving) > 3
+          @jp = "Judging"
+        elsif (@perceiving - @judging) > 3
+          @jp = "Perceiving"
+        else
+          @jp = nil
+        end
       end
 
-      current_discovery_user.update_attribute(:ei, @ei)
-      current_discovery_user.update_attribute(:si, @si)
-      current_discovery_user.update_attribute(:tf, @tf)
-      current_discovery_user.update_attribute(:jp, @jp)
+      if @ei.present? 
+        current_discovery_user.update_attribute(:ei, @ei)
+      end
+
+      if @si.present?
+        current_discovery_user.update_attribute(:si, @si)
+      end
+
+      if @tf.present? 
+        current_discovery_user.update_attribute(:tf, @tf)
+      end
+
+      if @jp.present? 
+        current_discovery_user.update_attribute(:jp, @jp)
+      end
 
     end
 
