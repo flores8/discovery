@@ -3,7 +3,7 @@ require_dependency "discovery/application_controller"
 module Discovery
   class QuizController < ApplicationController
     before_filter :authenticate_user!
-    before_filter :current_question, :next_question, only: [:show]
+    before_filter :current_question, :next_question, only: [:show, :recommendations]
     before_filter :add_personality_type 
 
     def new
@@ -85,8 +85,10 @@ module Discovery
     end
 
     def recommendations
-      current_user.personality_type = @personality_type
-      current_user.update_attribute(:personality_type, @personality_type)
+      if @personality_type.present? 
+        current_user.personality_type = @personality_type
+        current_user.update_attribute(:personality_type, @personality_type)
+      end
     end
 
     def update
