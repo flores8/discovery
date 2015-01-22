@@ -36,7 +36,7 @@ module Discovery
           x << current_user.tf.first.downcase
           x << current_user.jp.first.downcase
           @personality_type = x.join
-          @personality_description = Discovery::Personality.where(name: "#{ @personality_type.upcase }").first.description
+          @personality = Discovery::Personality.where(name: "#{ @personality_type.upcase }").first
         end
       end
       # If you've answered some questions let's find out what question you're on.
