@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Discovery::VERSION
   s.authors     = ["Lauralee Flores"]
   s.email       = ["lauralee@majorfinder.com"]
-  s.homepage    = "http://www.majorfinder.com/discovery"
+  s.homepage    = "http://www.majorfinder.com/personality"
   s.summary     = "Personality Test"
-  s.description = "Explore your personality through a series of 50 questions. You can see the results before completing all 50 questions but the more questions you answer the more accurate the results."
+  s.description = "Explore your personality through a series of questions. You can see the results before completing all 50 questions but the more questions you answer the more accurate the results."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
