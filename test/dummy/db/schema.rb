@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150120184116) do
+ActiveRecord::Schema.define(:version => 20150122182744) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -68,6 +68,15 @@ ActiveRecord::Schema.define(:version => 20150120184116) do
     t.integer  "question"
     t.integer  "user_id"
   end
+
+  create_table "discovery_categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "personality_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "discovery_categories", ["personality_id"], :name => "index_discovery_categories_on_personality_id"
 
   create_table "discovery_personalities", :force => true do |t|
     t.string   "name"
@@ -192,6 +201,12 @@ ActiveRecord::Schema.define(:version => 20150120184116) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "profile_name"
+    t.string   "ei"
+    t.string   "si"
+    t.string   "tf"
+    t.string   "jp"
+    t.string   "role"
+    t.string   "personality_type"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

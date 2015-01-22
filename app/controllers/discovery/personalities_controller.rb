@@ -9,7 +9,6 @@ module Discovery
 		end
 
 		def show
-			@personality = Discovery::Personality.find(params[:id])
 		end
 
 		def new
