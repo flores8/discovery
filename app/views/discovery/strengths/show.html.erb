@@ -1,0 +1,4 @@
+<h3>Strength:</h3>
+<%= @strength.body %>
+
+<p><%= link_to "< back", strengths_path %> | <%= link_to "Edit", edit_strength_path %> | <%= link_to "Delete", strength_path(@strength), method: :delete, data: { confirm: "Are you sure? You will remove this strength from the database and can\'t get it back."} %></p>

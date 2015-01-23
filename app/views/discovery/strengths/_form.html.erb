@@ -1,0 +1,6 @@
+<%= form_for @strength do |f| %>
+	<p>Add a strength:</p>
+	<p><%= f.text_area :body %></p>
+	<p><%= f.collection_select(:category_id, Discovery::Category.all, :id, :name, :prompt => 'Select') %></p>
+	<%= f.submit %>
+<% end %>
