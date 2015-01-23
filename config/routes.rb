@@ -1,5 +1,9 @@
 Discovery::Engine.routes.draw do
-  resources :questions, :answers, :personalities, :categories
+  resources :questions, :answers, :personalities, :categories, :strengths
+
+  # resources :categories do
+  # 	resources :strengths
+  # end
   get 'results' => "quiz#show" 
   get 'recommendations' => "quiz#recommendations"
   put 'recommendations' => "quiz#recommendations"
