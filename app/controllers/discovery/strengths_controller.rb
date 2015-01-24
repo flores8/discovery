@@ -9,6 +9,7 @@ module Discovery
 		end
 
 		def edit
+			@category = Discovery::Category.find(params[:category_id])
 		end
 
 		def create
@@ -22,8 +23,10 @@ module Discovery
 		end
 
 		def update
+			@category = Discovery::Category.find(params[:category_id])
+			@strength = @category.strengths.find(params[:id])
 			if @strength.update_attributes(params[:strength])
-				redirect_to @strength, notice: 'the strength was updated successfully!'
+				redirect_to category_path(@category), notice: 'The strength was updated successfully!'
 			else
 				render action: 'edit'
 			end

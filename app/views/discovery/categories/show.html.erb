@@ -4,7 +4,7 @@
 <h3><%= @strengths.count %> Strengths:</h3>
 <ul>
 	<% @strengths.each do |s| %>
-		<li><%= s.body %></li>
+		<li><%= s.body %> (<%= link_to "edit", edit_category_strength_path(s) %>)</li>
 	<% end %>
 </ul>
 <p><%= render partial: 'discovery/strengths/form', locals: { category: @category, strength: @strength } %></p>

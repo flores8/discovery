@@ -1,1 +1,17 @@
-<%= render 'form' %>
+<%= form_for [@category, @strength] do |f| %>
+	<!-- Error Messages --> 
+	<% if @strength.errors.any? %>
+		<div class="alert alert-danger">
+			<h4>There are <%= pluralize(@strength.errors.count, "error") %> errors.</h4>
+			<ul>
+				<% @strength.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>Edit strength:</p>
+	<p><%= f.text_field :body %></p>
+	<%= f.submit %>
+<% end %>
