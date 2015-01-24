@@ -1,6 +1,17 @@
-<%= form_for @strength do |f| %>
+<%= form_for [category, category.strengths.new] do |f| %>
+	<!-- Error Messages --> 
+	<% if category.errors.any? %>
+		<div class="alert alert-danger">
+			<h4>There are <%= pluralize(category.errors.count, "error") %> errors.</h4>
+			<ul>
+				<% category.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
 	<p>Add a strength:</p>
-	<p><%= f.text_area :body %></p>
-	<p><%= f.collection_select(:category_id, Discovery::Category.all, :id, :name, :prompt => 'Select') %></p>
+	<p><%= f.text_field :body %></p>
 	<%= f.submit %>
 <% end %>

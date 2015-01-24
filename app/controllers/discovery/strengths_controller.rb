@@ -2,14 +2,7 @@ require_dependency "discovery/application_controller"
 
 module Discovery
 	class StrengthsController < ApplicationController
-		before_filter :set_strength, only: [:show, :edit, :update, :destroy]
-
-		def index
-			@strengths = Discovery::Strength.all
-		end
-
-		def show
-		end
+		before_filter :set_strength, only: [:edit, :update, :destroy]
 
 		def new
 			@strength = Discovery::Strength.new
@@ -19,11 +12,12 @@ module Discovery
 		end
 
 		def create
-			@strength = Discovery::Strength.new(params[:strength])
+			@category = Discovery::Category.find(params[:category_id])
+			@strength = @category.strengths.new(params[:strength])
 			if @strength.save
-				redirect_to @strength, notice: 'The strength was created successfully!'
+				redirect_to category_path(@category), notice: 'The strength was created successfully!'
 			else
-				render action: 'edit'
+				render category_path(@category)
 			end
 		end
 

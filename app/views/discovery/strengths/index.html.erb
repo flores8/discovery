@@ -1,7 +1,0 @@
-All <%= @strengths.count %> Strengths:
-
-<% @strengths.each do |s| %>
-	<p><%= link_to s.body, s %></p>
-<% end %>
-
-<p><%= link_to "Add New Strength", new_strength_path %></p>

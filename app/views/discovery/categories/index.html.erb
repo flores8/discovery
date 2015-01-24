@@ -1,11 +1,16 @@
-All Categorires:
+
 <p><%= link_to "Add a Category", new_category_path %></p>
+
+<br><br>
+
+All Categorires:
 <% @personalities.each do |p| %>
 	<% if p.categories.present? %>
 		<h3><%= p.name %></h3>
 		<% p.categories.each do |c| %>
 			<p><%= link_to c.name, c %></p>
 		<% end %>
+		<hr>
 	<% end %>
 <% end %>
 

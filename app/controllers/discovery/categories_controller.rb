@@ -10,6 +10,8 @@ module Discovery
 		end
 
 		def show
+			@strengths = @category.strengths
+			# @strength = @category.strengths.new
 		end
 
 		def new

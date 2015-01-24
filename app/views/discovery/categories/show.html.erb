@@ -1,3 +1,11 @@
 <h3>Category: <%= @category.name %></h3>
 <p>Personality: <%= @category.personality.name %></p>
+<hr>
+<h3><%= @strengths.count %> Strengths:</h3>
+<ul>
+	<% @strengths.each do |s| %>
+		<li><%= s.body %></li>
+	<% end %>
+</ul>
+<p><%= render partial: 'discovery/strengths/form', locals: { category: @category, strength: @strength } %></p>
 <p><%= link_to "< back", categories_path %> | <%= link_to "Edit", edit_category_path %></p>
