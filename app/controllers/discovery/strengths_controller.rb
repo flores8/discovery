@@ -2,14 +2,15 @@ require_dependency "discovery/application_controller"
 
 module Discovery
 	class StrengthsController < ApplicationController
-		before_filter :set_strength, only: [:edit, :update, :destroy]
+		before_filter :set_category, only: [:edit]
+		before_filter :set_category_strength, only: [:edit]
+		before_filter :set_strength, only: [:update, :destroy]
 
 		def new
 			@strength = Discovery::Strength.new
 		end
 
 		def edit
-			@category = Discovery::Category.find(params[:category_id])
 		end
 
 		def create
@@ -38,6 +39,14 @@ module Discovery
 		end
 
 		private
+
+		def set_category
+			@category = Discovery::Category.find(params[:id])
+		end
+
+		def set_category_strength
+			@strength = @category.strengths.find(params[:category_id])
+		end
 
 		def set_strength
 			@strength = Discovery::Strength.find(params[:id])
