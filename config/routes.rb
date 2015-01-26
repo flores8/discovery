@@ -2,7 +2,7 @@ Discovery::Engine.routes.draw do
   resources :questions, :answers
 
   resources :personalities do
-  	resources :career_contentments, except: [:index, :show]
+  	resources :career_contentments, only: [:create, :edit, :update]
   end
 
   resources :categories do

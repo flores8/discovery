@@ -4,10 +4,6 @@ module Discovery
 	class StrengthsController < ApplicationController
 		before_filter :set_strength, only: [:edit, :update, :destroy]
 
-		def new
-			@strength = Discovery::Strength.new
-		end
-
 		def edit
 			@category = Discovery::Category.find(params[:category_id])
 		end
