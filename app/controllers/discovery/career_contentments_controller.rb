@@ -27,5 +27,11 @@ module Discovery
 				render action: 'edit'
 			end
 		end
+
+		def destroy
+			@contentment = Discovery::CareerContentment.find(params[:personality_id])
+			@contentment.destroy
+			redirect_to personality_url, notice: 'The career contentment was successfully deleted.'
+		end
 	end
 end

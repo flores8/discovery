@@ -6,7 +6,7 @@
 	<p>You will be happiest when your career is:</p>
 	<ul>
 		<% @contentments.each do |c| %>
-			<li><%= c.body %> (<%= link_to "edit", edit_personality_career_contentment_path(c) %>)</li>
+			<li><%= c.body %> (<%= link_to "edit", edit_personality_career_contentment_path(c) %> | <%= link_to "delete", personality_career_contentment_path(c), method: :delete, data: { notice: 'Are you sure?'} %>)</li>
 		<% end %>
 	</ul>
 <% end %>
