@@ -1,5 +1,9 @@
 Discovery::Engine.routes.draw do
-  resources :questions, :answers, :personalities
+  resources :questions, :answers
+
+  resources :personalities do
+  	resources :career_contentments, except: [:index, :show]
+  end
 
   resources :categories do
   	resources :strengths, except: [:index, :show]
