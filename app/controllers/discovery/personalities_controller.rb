@@ -9,7 +9,8 @@ module Discovery
 		end
 
 		def show
-		end
+			@contentments = @personality.career_contentments
+		end	
 
 		def new
 			@personality = Discovery::Personality.new
