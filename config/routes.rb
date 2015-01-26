@@ -6,7 +6,7 @@ Discovery::Engine.routes.draw do
   end
 
   resources :categories do
-  	resources :strengths, except: [:index, :show]
+  	resources :strengths, except: [:index, :new, :show]
   end
   get 'results' => "quiz#show" 
   get 'recommendations' => "quiz#recommendations"

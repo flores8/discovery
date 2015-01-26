@@ -3,10 +3,6 @@ require_dependency "discovery/application_controller"
 module Discovery
 	class StrengthsController < ApplicationController
 
-		def new
-			@strength = Discovery::Strength.new
-		end
-
 		def edit
 			@strength = Discovery::Strength.find(params[:category_id])
 			@category = Discovery::Category.find(params[:id])
