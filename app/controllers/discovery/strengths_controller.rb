@@ -2,14 +2,14 @@ require_dependency "discovery/application_controller"
 
 module Discovery
 	class StrengthsController < ApplicationController
-		before_filter :set_strength, only: [:edit, :update, :destroy]
 
 		def new
 			@strength = Discovery::Strength.new
 		end
 
 		def edit
-			@category = Discovery::Category.find(params[:category_id])
+			@strength = Discovery::Strength.find(params[:category_id])
+			@category = Discovery::Category.find(params[:id])
 		end
 
 		def create
@@ -33,14 +33,10 @@ module Discovery
 		end
 
 		def destroy
+			@category = Discovery::Category.find(params[:id])
+			@strength = Discovery::Strength.find(params[:category_id])
 			@strength.destroy
-			redirect_to strengths_url, notice: 'The strength was deleted successfully.'
-		end
-
-		private
-
-		def set_strength
-			@strength = Discovery::Strength.find(params[:id])
+			redirect_to category_url(@category), notice: 'The strength was deleted successfully.'
 		end
 	end
 end
