@@ -3,12 +3,13 @@
 
 <br><br>
 
-All Categorires:
 <% @personalities.each do |p| %>
 	<% if p.categories.present? %>
+	Categories by Personality type:
 		<h3><%= p.name %></h3>
+		<h4>Categories:</h4>
 		<% p.categories.each do |c| %>
-			<p><%= link_to c.name, c %></p>
+			<p><%= link_to c.name, c %> (<%= link_to "edit", edit_category_path(c) %> | <%= link_to "delete", category_path(c), method: :delete, data: { confirm: 'Are you sure?' } %>)</p>
 		<% end %>
 		<hr>
 	<% end %>

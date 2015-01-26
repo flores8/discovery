@@ -8,4 +8,4 @@
 	<% end %>
 </ul>
 <p><%= render partial: 'discovery/strengths/form', locals: { category: @category, strength: @strength } %></p>
-<p><%= link_to "< back", categories_path %> | <%= link_to "Edit", edit_category_path %></p>
+<p><%= link_to "< back", categories_path %> | <%= link_to "Edit", edit_category_path %> | <%= link_to "delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %></p>
