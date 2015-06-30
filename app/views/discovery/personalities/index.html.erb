@@ -1,8 +1,12 @@
-All personalities: 
-<p><%= link_to "Add Personality", new_personality_path %></p>
-<% @personalities.each do |p| %>
-	<h3><%= link_to p.name, p %></h3>
-	<p><%= simple_format(p.description) %></p>
-	<p><%= link_to "Edit", edit_personality_path(p) %> | <%= link_to "Delete", p, method: :delete, data: { confirm: "Are you sure? You will remove this personality from the database and can\'t get it back."} %></p>
-	<hr>
+<% if @personalities.count == 0 %>
+	<h3>No Personalities Exist.</h3>
+	<p><%= link_to "Add One", new_personality_path %></p>
+<% elsif @personalities.count > 0 %>
+	<h3>All personalities:</h3>
+	<% @personalities.each do |p| %>
+		<h3><%= link_to p.name, p %></h3>
+		<p><%= simple_format(p.description) %></p>
+		<p><%= link_to "Edit", edit_personality_path(p) %> | <%= link_to "Delete", p, method: :delete, data: { confirm: "Are you sure? You will remove this personality from the database and can\'t get it back."} %></p>
+		<hr>
+	<% end %>
 <% end %>

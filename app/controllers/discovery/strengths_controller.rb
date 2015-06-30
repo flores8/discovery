@@ -12,9 +12,9 @@ module Discovery
 			@category = Discovery::Category.find(params[:category_id])
 			@strength = @category.strengths.new(params[:strength])
 			if @strength.save
-				redirect_to category_path(@category), notice: 'The strength was created successfully!'
+				redirect_to personality_category_path(@category), notice: 'The strength was created successfully!'
 			else
-				render category_path(@category)
+				render personality_category_path(@category)
 			end
 		end
 
@@ -22,7 +22,7 @@ module Discovery
 			@category = Discovery::Category.find(params[:category_id])
 			@strength = @category.strengths.find(params[:id])
 			if @strength.update_attributes(params[:strength])
-				redirect_to category_path(@category), notice: 'The strength was updated successfully!'
+				redirect_to personality_category_path(@category), notice: 'The strength was updated successfully!'
 			else
 				render action: 'edit'
 			end
@@ -32,7 +32,7 @@ module Discovery
 			@category = Discovery::Category.find(params[:id])
 			@strength = Discovery::Strength.find(params[:category_id])
 			@strength.destroy
-			redirect_to category_url(@category), notice: 'The strength was deleted successfully.'
+			redirect_to personality_category_url(@category), notice: 'The strength was deleted successfully.'
 		end
 	end
 end

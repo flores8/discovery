@@ -1,8 +1,21 @@
 <%= form_for(@personality) do |f| %>
+	<!-- Error Messages -->
+	<% if @personality.errors.any? %>
+		<div class="alert alert-danger">
+			<h4>There are <%= pluralize(@personality.errors.count, "error") %> errors.</h4>
+			<ul>
+				<% @personality.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+
 	<p>Personality Name (INTJ):</p>
 	<%= f.text_field :name %><br><br>
 
 	<p>Personality Description:</p>
 	<%= f.text_area :description %><br><br>
-	<%= f.submit %>
+	<%= f.submit %><%= link_to "cancel", personalities_path %>
 <% end %>

@@ -10,8 +10,11 @@ module Discovery
 		end
 
 		def show
+			# binding.pry
 			@strengths = @category.strengths
 			# @strength = @category.strengths.new
+			@career_recommendations = @category.personality_careers
+			@careers = Career.all
 		end
 
 		def new

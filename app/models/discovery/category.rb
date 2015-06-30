@@ -5,6 +5,8 @@ module Discovery
   	# Relationships
     belongs_to :personality
     has_many :strengths
+    has_many :personality_careers
+    has_many :personality_majors
     
     # Validations
     validates :personality, presence: true

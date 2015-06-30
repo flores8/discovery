@@ -1,0 +1,5 @@
+<%= form_for [category, career] do |f| %>
+	<p>Add a career:</p>
+	<p><%= f.collection_select :career, Career.order(:name) %></p>
+	<%= f.submit %>
+<% end %>

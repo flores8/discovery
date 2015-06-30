@@ -1,5 +1,5 @@
 
-<p><%= link_to "Add a Category", new_category_path %></p>
+<p><%= link_to "Add a Category", new_personality_category_path %></p>
 
 <br><br>
 
@@ -9,7 +9,7 @@
 		<h3><%= p.name %></h3>
 		<h4>Categories:</h4>
 		<% p.categories.each do |c| %>
-			<p><%= link_to c.name, c %> (<%= link_to "edit", edit_category_path(c) %> | <%= link_to "delete", category_path(c), method: :delete, data: { confirm: 'Are you sure?' } %>)</p>
+			<p><%= link_to c.name, c %> (<%= link_to "edit", edit_personality_category_path(c) %> | <%= link_to "delete", personality_category_path(c), method: :delete, data: { confirm: 'Are you sure?' } %>)</p>
 		<% end %>
 		<hr>
 	<% end %>
