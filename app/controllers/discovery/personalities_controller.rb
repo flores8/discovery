@@ -3,6 +3,7 @@ require_dependency "discovery/application_controller"
 module Discovery
 	class PersonalitiesController < ApplicationController
 		before_filter :set_personality, only: [:show, :edit, :update, :destroy]
+		before_filter :authorize
 
 		def index
 			@personalities = Discovery::Personality.all
@@ -42,8 +43,15 @@ module Discovery
 		end
 
 		private
+		
 		def set_personality
 			@personality = Discovery::Personality.find(params[:id])
+		end
+
+		def authorize
+			unless current_user && current_user.role == "admin"
+				redirect_to root_path, notice: "Sorry! You're not authorized to visit that page."
+			end
 		end
 	end
 end
