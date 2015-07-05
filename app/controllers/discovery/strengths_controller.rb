@@ -2,6 +2,7 @@ require_dependency "discovery/application_controller"
 
 module Discovery
 	class StrengthsController < ApplicationController
+		before_filter :authorize
 
 		def edit
 			@strength = Discovery::Strength.find(params[:category_id])
@@ -12,9 +13,9 @@ module Discovery
 			@category = Discovery::Category.find(params[:category_id])
 			@strength = @category.strengths.new(params[:strength])
 			if @strength.save
-				redirect_to personality_category_path(@category), notice: 'The strength was created successfully!'
+				redirect_to category_path(@category), notice: 'The strength was created successfully!'
 			else
-				render personality_category_path(@category)
+				redirect_to category_path(@category), alert: "Please include a strength first and then save it to this category."
 			end
 		end
 
@@ -22,7 +23,7 @@ module Discovery
 			@category = Discovery::Category.find(params[:category_id])
 			@strength = @category.strengths.find(params[:id])
 			if @strength.update_attributes(params[:strength])
-				redirect_to personality_category_path(@category), notice: 'The strength was updated successfully!'
+				redirect_to category_path(@category), notice: 'The strength was updated successfully!'
 			else
 				render action: 'edit'
 			end
@@ -32,7 +33,15 @@ module Discovery
 			@category = Discovery::Category.find(params[:id])
 			@strength = Discovery::Strength.find(params[:category_id])
 			@strength.destroy
-			redirect_to personality_category_url(@category), notice: 'The strength was deleted successfully.'
+			redirect_to category_url(@category), notice: 'The strength was deleted successfully.'
+		end
+
+		private
+
+		def authorize
+			unless current_user && current_user.role == "admin"
+				redirect_to root_path, notice: "Sorry! You're not authorized to visit that page."
+			end
 		end
 	end
 end

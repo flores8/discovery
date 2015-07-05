@@ -3,8 +3,8 @@ module Discovery
   	attr_accessible :name, :description
 
   	# Relationships
-  	has_many :categories
-  	has_many :career_contentments
+  	has_many :categories, dependent: :destroy
+  	has_many :career_contentments, dependent: :destroy
 
   	# Validations
   	validates :name, presence: true

@@ -3,6 +3,7 @@ require_dependency "discovery/application_controller"
 module Discovery
 	class CategoriesController < ApplicationController
 		before_filter :set_category, only: [:show, :edit, :update, :destroy]
+		before_filter :authorize
 
 		def index
 			@categories = Discovery::Category.all
@@ -10,11 +11,12 @@ module Discovery
 		end
 
 		def show
-			# binding.pry
 			@strengths = @category.strengths
 			# @strength = @category.strengths.new
 			@career_recommendations = @category.personality_careers
 			@careers = Career.all
+			@major_recommendations = @category.personality_majors
+			@majors = Major.all
 		end
 
 		def new
@@ -51,6 +53,12 @@ module Discovery
 
 		def set_category
 			@category = Discovery::Category.find(params[:id])
+		end
+
+		def authorize
+			unless current_user && current_user.role == "admin"
+				redirect_to root_path, notice: "Sorry! You're not authorized to visit that page."
+			end
 		end
 	end
 end
