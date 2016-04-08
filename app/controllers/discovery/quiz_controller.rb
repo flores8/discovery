@@ -5,18 +5,22 @@ module Discovery
     before_filter :authenticate_user!
     before_filter :current_question, :next_question, only: [:show, :recommendations]
     before_filter :add_personality_type
-    before_filter :find_and_assign_personality, only: [:show, :recommendations] 
+    before_filter :find_and_assign_personality, only: [:show, :recommendations]
 
     def new
     end
 
-    def show 
+    def show
     end
 
     def recommendations
-      if @personality_type.present? 
+      binding.pry
+      if @personality_type.present?
         current_user.personality_type = @personality_type
         current_user.update_attribute(:personality_type, @personality_type)
+      else
+        # redirect them to the results page (show)
+        redirect_to action: :show
       end
     end
 
@@ -76,12 +80,12 @@ module Discovery
             @ei = "Extravert"
           elsif (@introvert - @extravert) > 2
             @ei = "Introvert"
-          else 
+          else
             @ei = nil
           end
         end
 
-        
+
         # Sensing or Intuitive?
         # make sure there is enough of a difference
         # before assigning - in this case 3 point difference
@@ -101,7 +105,7 @@ module Discovery
             @tf = "Thinking"
           elsif (@feeling - @thinking) > 3
             @tf = "Feeling"
-          else 
+          else
             @tf = nil
           end
         end
@@ -117,7 +121,7 @@ module Discovery
           end
         end
 
-        if @ei.present? 
+        if @ei.present?
           current_discovery_user.update_attribute(:ei, @ei)
         end
 
@@ -125,11 +129,11 @@ module Discovery
           current_discovery_user.update_attribute(:si, @si)
         end
 
-        if @tf.present? 
+        if @tf.present?
           current_discovery_user.update_attribute(:tf, @tf)
         end
 
-        if @jp.present? 
+        if @jp.present?
           current_discovery_user.update_attribute(:jp, @jp)
         end
       end
