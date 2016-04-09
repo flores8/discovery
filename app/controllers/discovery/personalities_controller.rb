@@ -11,7 +11,7 @@ module Discovery
 
 		def show
 			@contentments = @personality.career_contentments
-		end	
+		end
 
 		def new
 			@personality = Discovery::Personality.new
@@ -43,7 +43,7 @@ module Discovery
 		end
 
 		private
-		
+
 		def set_personality
 			@personality = Discovery::Personality.find(params[:id])
 		end

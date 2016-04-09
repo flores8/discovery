@@ -17,5 +17,8 @@
 
 	<p>Personality Description:</p>
 	<%= f.text_area :description %><br><br>
-	<%= f.submit %><%= link_to "cancel", personalities_path %>
+	<%= f.submit %>
+	<p>
+		<%= link_to "< cancel", personalities_path %>
+	</p>
 <% end %>

@@ -1,18 +1,22 @@
-<h1><%= @personality.name %></h1>
-<p><%= simple_format @personality.description %></p>
+<div class="container">
+	<div class="row">
+		<h1><%= @personality.name %></h1>
+		<p><%= simple_format @personality.description %></p>
 
-<hr>
-<% if @contentments.count > 0 %>
-	<p>You will be happiest when your career is:</p>
-	<ul>
-		<% @contentments.each do |c| %>
-			<li><%= c.body %> (<%= link_to "edit", edit_personality_career_contentment_path(c) %> | <%= link_to "delete", personality_career_contentment_path(c), method: :delete, data: { notice: 'Are you sure?'} %>)</li>
+		<hr>
+		<% if @contentments.count > 0 %>
+			<p>You will be happiest when your career is:</p>
+			<ul>
+				<% @contentments.each do |c| %>
+					<li><%= c.body %> (<%= link_to "edit", edit_personality_career_contentment_path(c) %> | <%= link_to "delete", personality_career_contentment_path(c), method: :delete, data: { notice: 'Are you sure?'} %>)</li>
+				<% end %>
+			</ul>
 		<% end %>
-	</ul>
-<% end %>
 
-<p><%= render partial: 'discovery/career_contentments/form', locals: { personality: @personality } %></p>
+		<p><%= render partial: 'discovery/career_contentments/form', locals: { personality: @personality } %></p>
 
 
 
-<%= link_to "< back", personalities_path %> | <%= link_to "Edit", edit_personality_path(@personality) %>
+		<%= link_to "< back", personalities_path %> | <%= link_to "Edit", edit_personality_path(@personality) %>
+	</div>
+</div>

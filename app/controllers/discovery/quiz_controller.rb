@@ -14,7 +14,6 @@ module Discovery
     end
 
     def recommendations
-      binding.pry
       if @personality_type.present?
         current_user.personality_type = @personality_type
         current_user.update_attribute(:personality_type, @personality_type)
