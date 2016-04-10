@@ -1,12 +1,16 @@
-<h3>Category: <%= @category.name %></h3>
-<p>Personality: <%= @category.personality.name %></p>
-<%# binding.pry %>
-<hr>
-<h3><%= @strengths.count %> Strengths:</h3>
-<ul>
-	<% @strengths.each do |s| %>
-		<li><%= s.body %> (<%= link_to "edit", edit_personality_category_strength_path(s) %> | <%= link_to "delete", personality_category_strength_path(s), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
-	<% end %>
-</ul>
-<p><%= render partial: 'discovery/strengths/form', locals: { category: @category, strength: @strength } %></p>
-<p><%= link_to "< back", personality_categories_path %> | <%= link_to "Edit", edit_personality_category_path %> | <%= link_to "delete", personality_category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %></p>
+<div class="container">
+	<div class="row">
+		<h1>Category: <%= @category.name %></h1>
+		<h2>Personality: <%= @category.personality.name %></h2>
+
+		<hr>
+		<h3><%= @strengths.count %> Strengths:</h3>
+		<ul>
+			<% @strengths.each do |s| %>
+				<li><%= s.body %> (<%= link_to "edit", edit_category_strength_path(s) %> | <%= link_to "delete", category_strength_path(s), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
+			<% end %>
+		</ul>
+		<p><%= render partial: 'discovery/strengths/form', locals: { category: @category, strength: @strength } %></p>
+		<p><%= link_to "< back", categories_path %> | <%= link_to "Edit", edit_category_path(@category) %> | <%= link_to "delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %></p>
+	</div>
+</div>
