@@ -11,11 +11,10 @@ module Discovery
 		end
 
 		def show
-			@strengths = @category.strengths
 			# @strength = @category.strengths.new
-			@career_recommendations = @category.personality_careers
+			# @career_recommendations = @category.personality_careers
 			@careers = Career.all
-			@major_recommendations = @category.personality_majors
+			# @major_recommendations = @category.personality_majors
 			@majors = Major.all
 		end
 
