@@ -1,5 +1,10 @@
-<%= form_for [category, career] do |f| %>
+<%= form_for(@category) do |f| %>
 	<p>Add a career:</p>
-	<p><%= f.collection_select :career, Career.order(:name) %></p>
-	<%= f.submit %>
+	<select name="category[career_id]">
+    <% Career.all.each do |career| %>
+        <option value="<%= career.id %>"><%= career.name %></option>
+    <% end %>
+	</select>
+	<br>
+	<%= f.submit "Add Career" %>
 <% end %>
