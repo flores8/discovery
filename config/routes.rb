@@ -3,10 +3,10 @@ Discovery::Engine.routes.draw do
 
   resources :personalities do
   	resources :career_contentments, only: [:create, :edit, :update, :destroy]
+    resources :strengths, except: [:index, :new, :show]
   end
 
   resources :categories do
-  	resources :strengths, except: [:index, :new, :show]
     resources :personality_careers, except: [:index, :new, :show]
     resources :personality_majors, except: [:index, :new, :show]
   end
