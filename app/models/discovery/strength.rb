@@ -7,7 +7,7 @@ module Discovery
 
     # Validations
     validates :body, presence: true
-    validates :category_id, presence: true
+    validates :personality_id, presence: true
 
   end
 end
