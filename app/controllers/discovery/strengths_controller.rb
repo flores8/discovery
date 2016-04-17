@@ -5,8 +5,8 @@ module Discovery
 		before_filter :authorize
 
 		def edit
-			@strength = Discovery::Strength.find(params[:category_id])
-			@personality = Discovery::Personality.find(params[:id]) # Check to make sure this is right
+			@strength = Discovery::Strength.find(params[:personality_id])
+			@personality = Discovery::Personality.find(params[:id])
 		end
 
 		def create
@@ -20,7 +20,7 @@ module Discovery
 		end
 
 		def update
-			@personality = Discovery::Personality.find(params[:category_id])
+			@personality = Discovery::Personality.find(params[:personality_id])
 			@strength = @personality.strengths.find(params[:id])
 			if @strength.update_attributes(params[:strength])
 				redirect_to personality_path(@personality), notice: 'The strength was updated successfully!'
@@ -33,7 +33,7 @@ module Discovery
 			@personality = Discovery::Personality.find(params[:id])
 			@strength = Discovery::Strength.find(params[:personality_id])
 			@strength.destroy
-			redirect_to category_url(@personality), notice: 'The strength was deleted successfully.'
+			redirect_to personality_url(@personality), notice: 'The strength was deleted successfully.'
 		end
 
 		private
