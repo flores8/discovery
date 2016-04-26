@@ -14,7 +14,7 @@ module Discovery
 			# @strength = @category.strengths.new
 			# @career_recommendations = @category.personality_careers
 			@careers = Career.all
-			# @major_recommendations = @category.personality_majors
+			@major_recommendations = @category.majors
 			@majors = Major.all
 		end
 

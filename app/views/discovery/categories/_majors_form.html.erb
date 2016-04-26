@@ -1,0 +1,23 @@
+
+<%= form_for [@category, @category.majors.new] do |f| %>
+  <% if @category.errors.any? %>
+    <div class="alert alert-danger">
+      <h4>There are <%= pluralize(@category.errors.count, "error") %> errors.</h4>
+      <ul>
+        <% @category.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <p>Add a major:</p>
+  <select name="category[major_id]">
+    <% Major.all.each do |major| %>
+        <option value="<%= major.id %>"><%= major.name %></option>
+    <% end %>
+  </select>
+  <br>
+  <%= f.submit "Add Major" %> 
+<% end %>

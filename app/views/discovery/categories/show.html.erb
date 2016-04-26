@@ -2,6 +2,9 @@
 	<div class="row">
 		<h1>Category: <%= @category.name %></h1>
 		<h2>Personality: <%= @category.personality.name %></h2>
+		<h3><%= pluralize(@major_recommendations.count, 'Major') %></h3>
+		<%= render 'majors_form' %>
+
 		<h3><%# @category.personality_careers.count %> Careers</h3>
 		<%= render 'careers_form' %>
 

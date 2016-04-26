@@ -4,8 +4,8 @@ module Discovery
 
   	# Relationships
     belongs_to :personality
-    has_many :personality_careers, dependent: :destroy
-    has_many :personality_majors, dependent: :destroy
+    has_many :careers, dependent: :destroy
+    has_many :majors, dependent: :destroy
 
     # Validations
     validates :personality, presence: true
