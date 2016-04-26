@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  major_id: 1
+  category_id: 1
+
+two:
+  major_id: 1
+  category_id: 1
