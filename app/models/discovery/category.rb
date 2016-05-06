@@ -1,11 +1,11 @@
 module Discovery
   class Category < ActiveRecord::Base
-  	attr_accessible :name, :personality_id, :career_id
+  	attr_accessible :name, :personality_id, :career_id, :major_ids
 
   	# Relationships
     belongs_to :personality
-    has_many :careers, dependent: :destroy
-    has_many :majors, dependent: :destroy
+    has_many :major_recommendations
+    has_many :majors, through: :major_recommendations
 
     # Validations
     validates :personality, presence: true

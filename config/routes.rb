@@ -7,8 +7,8 @@ Discovery::Engine.routes.draw do
   end
 
   resources :categories do
-    resources :personality_careers, except: [:index, :new, :show]
-    resources :majors, except: [:index, :new, :show]
+    resources :career_recommendations, except: [:index, :new, :show]
+    resources :major_recommendations, except: [:index, :new, :show]
   end
   get 'results' => "quiz#show"
   get 'recommendations' => "quiz#recommendations"
