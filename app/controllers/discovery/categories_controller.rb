@@ -15,7 +15,7 @@ module Discovery
 			# @career_recommendations = @category.personality_careers
 			@careers = Career.all
 			@majors = Major.all
-			@major_recommendation = Discovery::MajorRecommendation.new(params[:category])
+			@major_recommendations = @category.major_recommendations
 		end
 
 		def new

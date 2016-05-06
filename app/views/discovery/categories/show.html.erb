@@ -2,19 +2,19 @@
 	<div class="row">
 		<h1>Category: <%= @category.name %></h1>
 		<h2>Personality: <%= @category.personality.name %></h2>
-		<h3><%= pluralize(@category.major_recommendations.count, 'Major Recommendation') %></h3>
-		<% if @category.major_recommendations.count > 0 %>
-			<ul>
-				<% @category.major_recommendations.each do |r| %>
-					<% r.major_id.present? %>
-						<li><%= r.major.name %></li>
+		<h3><%= pluralize(@major_recommendations.count, 'Major Recommendation') %></h3>
 
+		<% if @major_recommendations.count > 0 %>
+			<ul>
+				<% @major_recommendations.each do |r| %>
+					<% r.major_id.present? %>
+						<li><%= r.major.name %> (<%= link_to "delete", category_major_recommendation_path(r), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
 				<% end %>
 			</ul>
 		<% end %>
-		<p><%= render partial: 'majors_form', locals: { category: @category, major_recommendation: @major_recommendation } %></p>
+		<p><%= render partial: 'discovery/major_recommendations/form', locals: { category: @category, major_recommendation: @major_recommendation } %></p>
 
-
+		<hr>
 		<h3><%# @category.personality_careers.count %> Careers</h3>
 		<%= render 'careers_form' %>
 

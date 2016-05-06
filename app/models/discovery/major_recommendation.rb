@@ -4,5 +4,7 @@ module Discovery
 
     belongs_to :major
     belongs_to :category
+
+    validates :major_id, uniqueness: true
   end
 end
