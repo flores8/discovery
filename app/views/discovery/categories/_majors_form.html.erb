@@ -1,22 +1,11 @@
-<%= form_for [category, category.major_recommendations.new] do |f| %>
-  <% if @category.errors.any? %>
-    <div class="alert alert-danger">
-      <h4>There are <%= pluralize(@category.errors.count, "error") %> errors.</h4>
-      <ul>
-        <% @category.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-
+<%= form_for [category, major_recommendation] do |f| %>
   <p>Add a major:</p>
-  <select name="category.major_recommendations[major_id]">
+  <p><%= f.collection_select(:major_id, Major.all, :id, :name, :prompt => 'Select') %></p>
+  <!-- <select name="category.major_recommendations[major_id]">
     <% Major.all.each do |major| %>
         <option value="<%= major.id %>"><%= major.name %></option>
     <% end %>
-  </select>
-  <br>
+  </select> -->
   <%= f.submit "Add Major" %>
 <% end %>

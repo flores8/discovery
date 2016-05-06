@@ -12,7 +12,7 @@
 				<% end %>
 			</ul>
 		<% end %>
-		<p><%= render partial: 'majors_form', locals: { category: @category, recommendations: @category.major_recommendations } %></p>
+		<p><%= render partial: 'majors_form', locals: { category: @category, major_recommendation: @major_recommendation } %></p>
 
 
 		<h3><%# @category.personality_careers.count %> Careers</h3>
