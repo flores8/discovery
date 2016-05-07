@@ -16,8 +16,9 @@
 
 		<hr>
 		<h3><%# @category.personality_careers.count %> Careers</h3>
-		<%= render 'careers_form' %>
+		<p><%= render partial: 'discovery/career_recommendations/form', locals: { category: @category, career_recommendation: @career_recommendation } %></p>
 
+		<hr>
 		<p><%= link_to "< back", categories_path %> | <%= link_to "Edit", edit_category_path(@category) %> | <%= link_to "delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %></p>
 	</div>
 </div>

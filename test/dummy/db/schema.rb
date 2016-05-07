@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160426043651) do
+ActiveRecord::Schema.define(:version => 20160507155616) do
 
   create_table "discovery_answers", :force => true do |t|
     t.string   "value"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(:version => 20160426043651) do
   end
 
   add_index "discovery_career_contentments", ["personality_id"], :name => "index_discovery_career_contentments_on_personality_id"
+
+  create_table "discovery_career_recommendations", :force => true do |t|
+    t.integer  "career_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "discovery_categories", :force => true do |t|
     t.string   "name"
