@@ -6,6 +6,8 @@ module Discovery
     belongs_to :personality
     has_many :major_recommendations
     has_many :majors, through: :major_recommendations
+    has_many :career_recommendations
+    has_many :careers, through: :career_recommendations
 
     # Validations
     validates :personality, presence: true

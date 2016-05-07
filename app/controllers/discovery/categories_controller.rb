@@ -13,9 +13,10 @@ module Discovery
 		def show
 			# @strength = @category.strengths.new
 			# @career_recommendations = @category.personality_careers
-			@careers = Career.all
 			@majors = Major.all
 			@major_recommendations = @category.major_recommendations
+			@careers = Career.all
+			@career_recommendations = @category.career_recommendations
 		end
 
 		def new
