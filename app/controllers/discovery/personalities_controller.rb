@@ -11,7 +11,6 @@ module Discovery
 
 		def show
 			@contentments = @personality.career_contentments
-			@strengths = @personality.strengths
 		end
 
 		def new

@@ -8,6 +8,7 @@ module Discovery
     has_many :majors, through: :major_recommendations
     has_many :career_recommendations
     has_many :careers, through: :career_recommendations
+    has_many :strengths, dependent: :destroy
 
     # Validations
     validates :personality, presence: true

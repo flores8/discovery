@@ -17,6 +17,8 @@ module Discovery
 			@major_recommendations = @category.major_recommendations
 			@careers = Career.all
 			@career_recommendations = @category.career_recommendations
+			binding.pry
+			@strengths = @category.strengths
 		end
 
 		def new
