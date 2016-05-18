@@ -15,16 +15,6 @@
 
 		<p><%= render partial: 'discovery/career_contentments/form', locals: { personality: @personality } %></p>
 
-		<hr>
-		
-		<h3><%= @strengths.count %> Strengths:</h3>
-		<ul>
-			<% @strengths.each do |s| %>
-				<li><%= s.body %> (<%= link_to "edit", edit_personality_strength_path(s) %> | <%= link_to "delete", personality_strength_path(s), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
-			<% end %>
-		</ul>
-		<p><%= render partial: 'discovery/strengths/form', locals: { personality: @personality, strength: @strength } %></p>
-
 
 		<%= link_to "< back", personalities_path %> | <%= link_to "Edit", edit_personality_path(@personality) %>
 	</div>

@@ -3,12 +3,12 @@ Discovery::Engine.routes.draw do
 
   resources :personalities do
   	resources :career_contentments, only: [:create, :edit, :update, :destroy]
-    resources :strengths, except: [:index, :new, :show]
   end
 
   resources :categories do
     resources :career_recommendations, only: [:create, :destroy]
     resources :major_recommendations, only: [:create, :destroy]
+    resources :strengths, except: [:index, :new, :show]
   end
   get 'results' => "quiz#show"
   get 'recommendations' => "quiz#recommendations"
