@@ -78,11 +78,11 @@ ActiveRecord::Schema.define(:version => 20160507155616) do
 
   create_table "discovery_strengths", :force => true do |t|
     t.text     "body"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "personality_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  add_index "discovery_strengths", ["personality_id"], :name => "index_discovery_strengths_on_personality_id"
+  add_index "discovery_strengths", ["category_id"], :name => "index_discovery_strengths_on_category_id"
 
 end
