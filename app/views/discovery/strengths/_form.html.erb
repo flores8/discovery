@@ -1,10 +1,10 @@
-<%= form_for [personality, personality.strengths.new] do |f| %>
+<%= form_for [category, category.strengths.new] do |f| %>
 	<!-- Error Messages -->
-	<% if personality.errors.any? %>
+	<% if category.errors.any? %>
 		<div class="alert alert-danger">
-			<h4>There are <%= pluralize(personality.errors.count, "error") %> errors.</h4>
+			<h4>There are <%= pluralize(category.errors.count, "error") %> errors.</h4>
 			<ul>
-				<% personality.errors.full_messages.each do |msg| %>
+				<% category.errors.full_messages.each do |msg| %>
 					<li><%= msg %></li>
 				<% end %>
 			</ul>

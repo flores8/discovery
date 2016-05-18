@@ -5,35 +5,35 @@ module Discovery
 		before_filter :authorize
 
 		def edit
-			@strength = Discovery::Strength.find(params[:personality_id])
-			@personality = Discovery::Personality.find(params[:id])
+			@strength = Discovery::Strength.find(params[:category_id])
+			@category = Discovery::Category.find(params[:id])
 		end
 
 		def create
-			@personality = Discovery::Personality.find(params[:personality_id])
-			@strength = @personality.strengths.new(params[:strength])
+			@category = Discovery::Category.find(params[:category_id])
+			@strength = @category.strengths.new(params[:strength])
 			if @strength.save
-				redirect_to personality_path(@personality), notice: 'The strength was created successfully!'
+				redirect_to category_path(@category), notice: 'The strength was created successfully!'
 			else
-				redirect_to personality_path(@personality), alert: "Please include a strength first and then save it to this category."
+				redirect_to category_path(@category), alert: "Please include a strength first and then save it to this category."
 			end
 		end
 
 		def update
-			@personality = Discovery::Personality.find(params[:personality_id])
-			@strength = @personality.strengths.find(params[:id])
+			@category = Discovery::Category.find(params[:category_id])
+			@strength = @category.strengths.find(params[:id])
 			if @strength.update_attributes(params[:strength])
-				redirect_to personality_path(@personality), notice: 'The strength was updated successfully!'
+				redirect_to category_path(@category), notice: 'The strength was updated successfully!'
 			else
 				render action: 'edit'
 			end
 		end
 
 		def destroy
-			@personality = Discovery::Personality.find(params[:id])
-			@strength = Discovery::Strength.find(params[:personality_id])
+			@category = Discovery::Category.find(params[:id])
+			@strength = Discovery::Strength.find(params[:category_id])
 			@strength.destroy
-			redirect_to personality_url(@personality), notice: 'The strength was deleted successfully.'
+			redirect_to category_url(@category), notice: 'The strength was deleted successfully.'
 		end
 
 		private

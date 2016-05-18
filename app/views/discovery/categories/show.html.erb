@@ -29,12 +29,12 @@
 		<h3><%= @strengths.count %> Strengths:</h3>
 		<ul>
 			<% @strengths.each do |s| %>
-				<li><%= s.body %> (<%= link_to "edit", edit_personality_strength_path(s) %> | <%= link_to "delete", personality_strength_path(s), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
+				<li><%= s.body %> (<%= link_to "edit", edit_category_strength_path(s) %> | <%= link_to "delete", category_strength_path(s), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
 			<% end %>
 		</ul>
-		<p><%= render partial: 'discovery/strengths/form', locals: { personality: @personality, strength: @strength } %></p>
+		<p><%= render partial: 'discovery/strengths/form', locals: { category: @category, strength: @strength } %></p>
 
-		
+
 		<p><%= link_to "< back", categories_path %> | <%= link_to "Edit", edit_category_path(@category) %> | <%= link_to "delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %></p>
 
 		<hr>

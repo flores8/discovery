@@ -39,7 +39,7 @@ module Discovery
 
 		def destroy
 			@personality.destroy
-			redirect_to personalities_url, notice: "The personality was deleted successfully."
+			redirect_to personality_url, notice: "The personality was deleted successfully."
 		end
 
 		private
