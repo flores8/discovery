@@ -5,6 +5,6 @@ module Discovery
     belongs_to :major
     belongs_to :category
 
-    validates :major_id, uniqueness: true
+    validates :major_id, presence: true
   end
 end

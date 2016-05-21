@@ -3,11 +3,11 @@ module Discovery
   	attr_accessible :body, :category_id
 
   	# Relationships
-    belongs_to :personality
+    belongs_to :category
 
     # Validations
     validates :body, presence: true
-    validates :personality_id, presence: true
+    validates :category_id, presence: true
 
   end
 end

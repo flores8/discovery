@@ -8,7 +8,7 @@ Discovery::Engine.routes.draw do
   resources :categories do
     resources :career_recommendations, only: [:create, :destroy]
     resources :major_recommendations, only: [:create, :destroy]
-    resources :strengths, except: [:index, :new, :show]
+    resources :strengths, only: [:create, :edit, :update, :destroy]
   end
   get 'results' => "quiz#show"
   get 'recommendations' => "quiz#recommendations"

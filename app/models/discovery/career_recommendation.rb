@@ -5,6 +5,6 @@ module Discovery
     belongs_to :career
     belongs_to :category
 
-    validates :career_id, uniqueness: true
+    validates :career_id, presence: true
   end
 end
