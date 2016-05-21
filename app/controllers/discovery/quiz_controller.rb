@@ -40,6 +40,7 @@ module Discovery
           x << current_user.jp.first.downcase
           @personality_type = x.join
           @personality = Discovery::Personality.where(name: "#{ @personality_type.upcase }").first
+          @categories = @personality.categories
         end
       end
       # If you've answered some questions let's find out what question you're on.
