@@ -8,8 +8,11 @@
 				<h4>Categories:</h4>
 				<% p.categories.each do |c| %>
 					<p><%= link_to c.name, c %> (<%= link_to "edit", edit_category_path(c) %> | <%= link_to "delete", category_path(c), method: :delete, data: { confirm: 'Are you sure?' } %>)</p>
+					<p class="small">
+						<%= c.majors.count %> majors, <%= c.careers.count %> careers, <%= c.strengths.count %> strengths.
+					</p>
+					<hr>
 				<% end %>
-				<hr>
 			<% else %>
 				<p>
 					No categories. <%= link_to "Add a Category", new_category_path %>

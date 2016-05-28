@@ -7,14 +7,16 @@
 			<h3><%= @personalities.count %> personalities:</h3>
 			<% @personalities.each do |p| %>
 				<h3><%= link_to p.name, p %></h3>
-				<p><%= p.categories.count %> Categories:</p>
-				<% p.categories.each do |c| %>
-					<h5><%= link_to c.name, c %></h5>
-					<p class="small"><%= c.majors.count %> majors, <%= c.careers.count %> careers, <%= c.strengths.count %> strengths.</p>
+				<p><%= simple_format truncate(p.description, length: 325)  %> </p>
+				<p><%= link_to "View Full Personality Description", p %> | <%= link_to "Edit", edit_personality_path(p) %> | <%= link_to "Delete", p, method: :delete, data: { confirm: "Are you sure? You will remove this personality from the database and can\'t get it back."} %></p>
+				<% if p.categories.count > 0 %>
+					<p><%= p.categories.count %> Categories:</p>
+					<% p.categories.each do |c| %>
+						<h5><%= link_to c.name, c %></h5>
+						<p class="small"><%= c.majors.count %> majors, <%= c.careers.count %> careers, <%= c.strengths.count %> strengths.</p>
+					<% end %>
 				<% end %>
-				<p><%= simple_format truncate(p.description, length: 150)  %></p>
-
-				<p><%= link_to "Edit", edit_personality_path(p) %> | <%= link_to "Delete", p, method: :delete, data: { confirm: "Are you sure? You will remove this personality from the database and can\'t get it back."} %></p>
+				<%= link_to "Create New Category", new_category_path %> 
 				<hr>
 			<% end %>
 		<% end %>
