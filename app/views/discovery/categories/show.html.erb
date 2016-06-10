@@ -1,43 +1,44 @@
 <div class="container">
 	<div class="row">
-		<h1>Category: <%= @category.name %></h1>
-		<h2>Personality: <%= @category.personality.name %></h2>
-		<h3><%= pluralize(@major_recommendations.count, 'Major Recommendation') %></h3>
+		<div class="span6 offset3">
+			<h1>Category: <%= @category.name %></h1>
+			<h2>Personality: <%= @category.personality.name %></h2>
+			<h3><%= pluralize(@major_recommendations.count, 'Major Recommendation') %></h3>
 
-		<% if @major_recommendations.count > 0 %>
-			<ul>
-				<% @major_recommendations.each do |r| %>
-					<li><%= r.major.name %> (<%= link_to "delete", category_major_recommendation_path(r), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
-				<% end %>
-			</ul>
-		<% end %>
-		<p><%= render partial: 'discovery/major_recommendations/form', locals: { category: @category, major_recommendation: @major_recommendation } %></p>
-
-		<hr>
-		<h3><%= pluralize(@career_recommendations.count, 'Career Recommendation') %></h3>
-		<% if @career_recommendations.count > 0 %>
-			<ul>
-				<% @career_recommendations.each do |r| %>
-					<li><%= r.career.name %> (<%= link_to "delete", category_career_recommendation_path(r), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
-				<% end %>
-			</ul>
-		<% end %>
-		<p><%= render partial: 'discovery/career_recommendations/form', locals: { category: @category, career_recommendation: @career_recommendation } %></p>
-
-		<hr>
-
-		<h3><%= @strengths.count %> Strengths:</h3>
-		<ul>
-			<% @strengths.each do |s| %>
-				<li><%= s.body %> (<%= link_to "edit", edit_category_strength_path(s) %> | <%= link_to "delete", category_strength_path(s), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
+			<% if @major_recommendations.count > 0 %>
+				<ul>
+					<% @major_recommendations.each do |r| %>
+						<li><%= r.major.name %> (<%= link_to "delete", category_major_recommendation_path(r), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
+					<% end %>
+				</ul>
 			<% end %>
-		</ul>
-		<p><%= render partial: 'discovery/strengths/form', locals: { category: @category, strength: @strength } %></p>
+			<p><%= render partial: 'discovery/major_recommendations/form', locals: { category: @category, major_recommendation: @major_recommendation } %></p>
+
+			<hr>
+			<h3><%= pluralize(@career_recommendations.count, 'Career Recommendation') %></h3>
+			<% if @career_recommendations.count > 0 %>
+				<ul>
+					<% @career_recommendations.each do |r| %>
+						<li><%= r.career.name %> (<%= link_to "delete", category_career_recommendation_path(r), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
+					<% end %>
+				</ul>
+			<% end %>
+			<p><%= render partial: 'discovery/career_recommendations/form', locals: { category: @category, career_recommendation: @career_recommendation } %></p>
+
+			<hr>
+
+			<h3><%= @strengths.count %> Strengths:</h3>
+			<ul>
+				<% @strengths.each do |s| %>
+					<li><%= s.body %> (<%= link_to "edit", edit_category_strength_path(s) %> | <%= link_to "delete", category_strength_path(s), method: :delete, data: { confirm: 'Are you sure?' } %>)</li>
+				<% end %>
+			</ul>
+			<p><%= render partial: 'discovery/strengths/form', locals: { category: @category, strength: @strength } %></p>
 
 
-		<p><%= link_to "< back", categories_path %> | <%= link_to "Edit", edit_category_path(@category) %> | <%= link_to "delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %></p>
+			<p><%= link_to "< back", categories_path %> | <%= link_to "Edit", edit_category_path(@category) %> | <%= link_to "delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %></p>
 
-		<hr>
-
+			<hr>
+		</div>
 	</div>
 </div>

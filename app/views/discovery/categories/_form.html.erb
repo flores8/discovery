@@ -1,6 +1,15 @@
-<%= form_for(@category) do |f| %>
-	<p>Category Name:</p>
-	<p><%= f.text_field :name %></p>
-	<p><%= f.collection_select(:personality_id, Discovery::Personality.all, :id, :name, :prompt => 'Select') %></p>
-	<%= f.submit %>
-<% end %>
+<div id="discovery-form">
+  <div class="container">
+    <div class="row">
+      <div class="span6 offset3">
+				<%= form_for(@category) do |f| %>
+					<p>Category Name:</p>
+					<p><%= f.text_field :name %></p>
+					<p><%= f.collection_select(:personality_id, Discovery::Personality.all, :id, :name, :prompt => 'Select') %></p>
+					<%= f.submit %>
+				<% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
